@@ -134,16 +134,18 @@ Do not use the vertical bar (pipe) in your pattern.
 //     return false;
 //   }
 
-const matchMonth = (input) => {
-  let regex = [/(^October$)/, /(^Oct$)/, /(^october$)/, /(^oct$)/];
-  let isItThere = false;
-  regex.forEach((reg) => {
-    if (reg.test(input)) {
-      isItThere = true;
-    }
-  });
-  return isItThere;
-};
+const matchMonth = (input) => /^[Oo]ct((ober)?)$/.test(input);
+
+// {
+//   let regex = [/(^October$)/, /(^Oct$)/, /(^october$)/, /(^oct$)/];
+//   let isItThere = false;
+//   regex.forEach((reg) => {
+//     if (reg.test(input)) {
+//       isItThere = true;
+//     }
+//   });
+//   return isItThere;
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
