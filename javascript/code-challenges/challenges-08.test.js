@@ -134,7 +134,7 @@ Do not use the vertical bar (pipe) in your pattern.
 //     return false;
 //   }
 
-const matchMonth = (input) => /^[Oo]ct((ober)?)$/.test(input);
+const matchMonth = (input) => /^[Oo]ct((ober)?)$/.test(input); //helped from hamza
 
 // {
 //   let regex = [/(^October$)/, /(^Oct$)/, /(^october$)/, /(^oct$)/];
