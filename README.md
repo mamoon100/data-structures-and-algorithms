@@ -20,4 +20,4 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-for the Code 401 readme file follow the [link](./java/README.md)
+for the Code 401 readme file follow the [link](./java)
