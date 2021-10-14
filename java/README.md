@@ -7,3 +7,4 @@
 | 1   | [Reverse an Array](./array-reverse/)           |
 | 2   | [Insert Shift an Array](./array-insert-shift/) |
 | 3   | [Binary Search](./array-binary-search/)        |
+|4| [Linked List](./linked-list/)
