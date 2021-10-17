@@ -13,7 +13,8 @@ public class App {
     System.out.println("The head when initialize new linked List is:  =>  " + testing.head);
     System.out.println("Adding {1,2,3,0,5,6,9,8} to the linked list");
     int[] inserted = {1, 2, 3, 0, 5, 6, 9, 8};
-    //adding the number to linked list
+//    adding the number to linked list
+
     for (int num : inserted) testing.insert(num);
     System.out.println("now let's print the string method");
     System.out.println(testing.toString());
@@ -21,5 +22,16 @@ public class App {
     System.out.println(testing.includes(5));
     System.out.println("let's check if it include number 10");
     System.out.println(testing.includes(10));
+    System.out.println("Let's append number 15 to the linked list");
+    testing.append(15);
+    System.out.println(testing.toString());
+    System.out.println("Let's add Number 7 before the 5 Value");
+    testing.insertBefore(5, 7);
+    System.out.println(testing.toString());
+    System.out.println("Now let's add Number 11 after number 2");
+    testing.insertAfter(2, 11);
+    System.out.println(testing.toString());
+
+
   }
 }
