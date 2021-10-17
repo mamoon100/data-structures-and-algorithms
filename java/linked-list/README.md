@@ -17,6 +17,19 @@ create the constructor for the class.
 For the **insert** method will take value and insert it in the head of the node LinkedList, this method will take O(1)
 for both space and time again we are not looping or creating N variable - we are just inserting one data every time
 
+For the **append** method will iterate over the linked list and when the next value is null it will insert the desire
+Node and will make it point to null it takes O(N) for the time due to the full iteration and O(1) for the space because
+we're just adding one Node
+
+For the **insertBefore** method will iterate over the linked list until the next value is what we want to add before it,
+After that we make the node we are one point to new node and make the new node point to the next node, so we can
+continue the linked list idea this will take O(N) for time due to the full iteration and O(1) for space we're only
+adding 1 Node
+
+For the **insertAfter** method almost the same thing as insertBefore but we check the current Node value and make it
+point to the new node and make the new node point to the next node so the linked list will continue this will take O(N)
+for time due to the full iteration and O(1) for space we're only adding 1 Node
+
 For the **include** method will take a value and check if it's exist inside the whole node and return true if it's exist
 and false otherwise,this method will take O(N) for Time because we are looping over all the LinkedList and O(1) for
 space because we're not creating any variable.
@@ -30,6 +43,13 @@ because the string depends on the Linked List length
 | #  | Method | usage |
 | ----------- | ----------- | -----------|
 | 1      | `LinkedList<T> linkedListName = new LinkedList<>()`       |this method to initilize newLinkedList
-| 2 | `linkedListName.insert(value)` |this method will add new value to the linked list tree|
-|3| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
-|4| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
+| 2 | `linkedListName.insert(value)` |this method will add new value to the first of linked list tree|
+|3| `linkedList.append(value)` | this method will append new value to the end of the linked list tree|
+|4| `linkedList.insertBefore(indexValue,value)`|this will insert a value before the indexValue on the linked list tree|
+|5| `linkedList.insertAfter(indexValue,value)`| this will insert a value after the indexValue on the linked list tree|
+|6| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
+|7| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
+
+### Whtite Board.
+
+![white board](./linked-list-insertions.jpg)

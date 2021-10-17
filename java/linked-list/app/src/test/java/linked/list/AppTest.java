@@ -14,6 +14,7 @@ public class AppTest {
   // create new linked list
   LinkedList<Integer> testing = new LinkedList<>();
   ArrayList<Integer> testString = new ArrayList<>();
+//  LinkedList<String> nameLinkedList = new LinkedList<>();
 
   public Integer randomNumber(int lower, int upper) {
     return (int) (Math.random() * (upper - lower)) + lower;
@@ -64,4 +65,57 @@ public class AppTest {
     actualString += "Null";
     assertEquals("There was an error in toString method", this.testing.toString(), actualString);
   }
+
+  @Test
+  public void appendTest() {
+    // appending value to the end *all the random number from 500,1000 so any low number it will not be random
+    this.testing.append(25);
+    // get the last iterate value of the linked list
+    Node<Integer> iter = this.testing.head;
+    while (iter.nextPointer != null) {
+      iter = iter.nextPointer;
+    }
+    assertEquals("There was an error in the appending method", iter.value, (Integer) 25);
+
+    // test for an empty linkedList
+    LinkedList<Integer> emptyLinkedList = new LinkedList<>();
+    emptyLinkedList.append(5);
+    assertEquals("There was an error in the appending method", emptyLinkedList.head.value, (Integer) 5);
+  }
+
+  @Test
+  public void insertBeforeTest() {
+    // this appends method to avoid error and be sure that there is number 25
+    this.testing.append(25);
+    // let's insert number 2 before the 25 we created up
+    this.testing.insertBefore(25, 2);
+    // iterate until we have 25 * again all the random numbers are above 500, so we will not have 25 by accident
+    Node<Integer> iter = this.testing.head;
+    boolean isItThere = false;
+    while (iter != null) {
+      if (iter.value == 25) {
+        isItThere = true;
+        break;
+      }
+      iter = iter.nextPointer;
+    }
+    assertTrue("There was an error in insert before method", isItThere);
+
+  }
+
+  @Test
+  public void insertAfterTest() {
+    // this appends method to avoid error and be sure that there is number 25
+    this.testing.append(25);
+    // let's insert number 6 after the 25 we created up
+    this.testing.insertAfter(25, 6);
+    // iterate until we have 25 * again all the random numbers are above 500, so we will not have 25 by accident
+    Node<Integer> iter = this.testing.head;
+    boolean isItThere = false;
+    while (iter.value != 25) {
+      iter = iter.nextPointer;
+    }
+    assertEquals("There was an error in insert after method", iter.nextPointer.value, (Integer) 6);
+  }
+
 }
