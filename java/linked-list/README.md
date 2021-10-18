@@ -30,6 +30,10 @@ For the **insertAfter** method almost the same thing as insertBefore but we chec
 point to the new node and make the new node point to the next node so the linked list will continue this will take O(N)
 for time due to the full iteration and O(1) for space we're only adding 1 Node
 
+For the **delete** method will iterate over the linked list until the next point is the value we need to delete then
+make the current node point to the node after the needed point so in general we can say we skip the value we need to
+delete, it takes O(N) for time due the iteration and O(1) we don't create any variable.
+
 For the **include** method will take a value and check if it's exist inside the whole node and return true if it's exist
 and false otherwise,this method will take O(N) for Time because we are looping over all the LinkedList and O(1) for
 space because we're not creating any variable.
@@ -47,8 +51,9 @@ because the string depends on the Linked List length
 |3| `linkedList.append(value)` | this method will append new value to the end of the linked list tree|
 |4| `linkedList.insertBefore(indexValue,value)`|this will insert a value before the indexValue on the linked list tree|
 |5| `linkedList.insertAfter(indexValue,value)`| this will insert a value after the indexValue on the linked list tree|
-|6| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
-|7| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
+|6| `linkedLits.delete(value)`|this will delete the value from the linked list tree|
+|7| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
+|8| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
 
 ### Whtite Board.
 
