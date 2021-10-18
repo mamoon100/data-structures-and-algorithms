@@ -81,14 +81,13 @@ public class LinkedList<T> {
     }
     node.nextPointer = current.nextPointer;
     current.nextPointer = node;
-//    while (current.value != null) {
-//      if (current.value == desireValue) {
-//        node.nextPointer = current.nextPointer;
-//        current.nextPointer = node;
-//        return;
-//      }
-//      current = current.nextPointer;
-//    }
+  }
 
+  public void delete(T desireValue) {
+    Node<T> current = this.head;
+    while (current.nextPointer.value != desireValue) {
+      current = current.nextPointer;
+    }
+    current.nextPointer = current.nextPointer.nextPointer;
   }
 }

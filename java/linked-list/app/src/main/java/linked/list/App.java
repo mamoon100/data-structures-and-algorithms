@@ -31,6 +31,9 @@ public class App {
     System.out.println("Now let's add Number 11 after number 2");
     testing.insertAfter(2, 11);
     System.out.println(testing.toString());
+    System.out.println("let's delete number 3");
+    testing.delete(3);
+    System.out.println(testing.toString());
 
 
   }

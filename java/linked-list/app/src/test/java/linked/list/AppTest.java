@@ -89,17 +89,7 @@ public class AppTest {
     this.testing.append(25);
     // let's insert number 2 before the 25 we created up
     this.testing.insertBefore(25, 2);
-    // iterate until we have 25 * again all the random numbers are above 500, so we will not have 25 by accident
-    Node<Integer> iter = this.testing.head;
-    boolean isItThere = false;
-    while (iter != null) {
-      if (iter.value == 25) {
-        isItThere = true;
-        break;
-      }
-      iter = iter.nextPointer;
-    }
-    assertTrue("There was an error in insert before method", isItThere);
+    assertTrue("There was an error in insert before method", this.testing.includes(25));
 
   }
 
@@ -111,11 +101,32 @@ public class AppTest {
     this.testing.insertAfter(25, 6);
     // iterate until we have 25 * again all the random numbers are above 500, so we will not have 25 by accident
     Node<Integer> iter = this.testing.head;
-    boolean isItThere = false;
     while (iter.value != 25) {
       iter = iter.nextPointer;
     }
     assertEquals("There was an error in insert after method", iter.nextPointer.value, (Integer) 6);
+  }
+
+
+  @Test
+  public void deleteTest() {
+    LinkedList<Integer> deleteTest = new LinkedList<>();
+    deleteTest.insert(5);
+    deleteTest.insert(2);
+    deleteTest.insert(3);
+    deleteTest.insert(6);
+    deleteTest.insert(8);
+    deleteTest.insert(9);
+    assertTrue("Just Checking the append working", deleteTest.includes(8));
+    // delete number 10
+    deleteTest.delete(5);
+    deleteTest.delete(6);
+    // get the boolean if it is there
+    boolean isItThere = deleteTest.includes(5);
+    assertFalse("There was a problem in the delete method", isItThere);
+    isItThere = deleteTest.includes(6);
+    assertFalse("There was a problem in the delete method", isItThere);
+
   }
 
 }
