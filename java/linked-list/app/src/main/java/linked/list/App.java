@@ -10,6 +10,7 @@ public class App {
 
   public static void main(String[] args) {
     LinkedList<Integer> testing = new LinkedList<>();
+    System.out.println(testing.length);
     System.out.println("The head when initialize new linked List is:  =>  " + testing.head);
     System.out.println("Adding {1,2,3,0,5,6,9,8} to the linked list");
     int[] inserted = {1, 2, 3, 0, 5, 6, 9, 8};
@@ -34,7 +35,10 @@ public class App {
     System.out.println("let's delete number 3");
     testing.delete(3);
     System.out.println(testing.toString());
+    System.out.print("let's test for determine the length from the tail to index 3 =>> ");
+    System.out.println(testing.kthFromEnd(3));
 
+    System.out.println("let's now test the middle method =>> " + testing.middleNode());
 
   }
 }

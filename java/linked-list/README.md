@@ -38,6 +38,12 @@ For the **include** method will take a value and check if it's exist inside the 
 and false otherwise,this method will take O(N) for Time because we are looping over all the LinkedList and O(1) for
 space because we're not creating any variable.
 
+For the **kthFromEnd** method will take indexValue and return the node value in that index in the linked list tree it
+take O(N) depending on the index we need and O(1) we didn't create any variable
+
+For the **middle** method this will return the node that in the middle and will take O(N) for time due the iteration and
+O(1) for space because we didn't create any variable.
+
 For the **toString** method will return string that contain all the value inside linked list in "{value} =>{value} =>
 Null" Format, this method will take O(N) for time because we are looping through the whole Node and O(N) for space
 because the string depends on the Linked List length
@@ -53,8 +59,13 @@ because the string depends on the Linked List length
 |5| `linkedList.insertAfter(indexValue,value)`| this will insert a value after the indexValue on the linked list tree|
 |6| `linkedLits.delete(value)`|this will delete the value from the linked list tree|
 |7| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
-|8| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
+|8| `linkedList.kthFromEnd(indexValue)`| this method will return the node at the indexValue (head => length-1)|
+|9| `linkedList.middle()`| this method will return the middle node of the linked list tree|
+|10| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
 
 ### Whtite Board.
 
-![white board](./linked-list-insertions.jpg)
+- white board for append, insertBefore, insertAfter and delete.
+  ![white board append...](./linked-list-insertions.jpg)
+- white board for kthFromEnd and middle
+  ![white board kth and middle](./linked-list-kth.jpg)

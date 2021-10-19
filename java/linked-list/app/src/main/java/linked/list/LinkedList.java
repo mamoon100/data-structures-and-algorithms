@@ -2,6 +2,7 @@ package linked.list;
 
 public class LinkedList<T> {
   Node<T> head;
+  int length = 0;
 
   public LinkedList() {
     this.head = null;
@@ -15,6 +16,7 @@ public class LinkedList<T> {
       insertingNode.nextPointer = this.head;
       this.head = insertingNode;
     }
+    this.length++;
 
   }
 
@@ -52,8 +54,8 @@ public class LinkedList<T> {
         current = current.nextPointer;
       }
       current.nextPointer = insertingNode;
-
     }
+    length++;
   }
 
   public void insertBefore(T desireValue, T value) {
@@ -63,13 +65,11 @@ public class LinkedList<T> {
       if (current.nextPointer.value == desireValue) {
         node.nextPointer = current.nextPointer;
         current.nextPointer = node;
+        length++;
         return;
       } else if (current.value == desireValue) insert(value);
       current = current.nextPointer;
     }
-
-
-//      throw new Exception("No matching number ");
 
   }
 
@@ -81,13 +81,41 @@ public class LinkedList<T> {
     }
     node.nextPointer = current.nextPointer;
     current.nextPointer = node;
+    length++;
   }
 
   public void delete(T desireValue) {
     Node<T> current = this.head;
     while (current.nextPointer.value != desireValue) {
+      if (current.value == desireValue) {
+        this.head = current.nextPointer;
+        return;
+      }
       current = current.nextPointer;
     }
     current.nextPointer = current.nextPointer.nextPointer;
+    length--;
   }
+
+  public T kthFromEnd(int desireValue) {
+    Node<T> current = this.head;
+    int count = 1;
+    while (count != length - desireValue) {
+      current = current.nextPointer;
+      count++;
+    }
+    return current.value;
+  }
+
+  public T middleNode() {
+//    Node<T> current = this.head;
+//    int count = 1;
+//    while (count != (length) - length / 2) {
+//      current = current.nextPointer;
+//      count++;
+//    }
+//    return current;
+    return kthFromEnd(length / 2);
+  }
+
 }
