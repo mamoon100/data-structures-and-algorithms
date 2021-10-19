@@ -129,4 +129,31 @@ public class AppTest {
 
   }
 
+  @Test
+  public void kthTest() {
+    // System.out.print("let's test for determine the length from the tail to index 3 =>> ");
+    //    System.out.println(testing.kthFromEnd(3));
+    //    System.out.println("let's now test the middle method =>> " + testing.middleNode().value);
+    this.testing.append(5);   //3
+    this.testing.append(3);   //2
+    this.testing.append(7);   //1
+    this.testing.append(2);   //0
+    assertEquals("\nthere was an error in the kth method\n", this.testing.kthFromEnd(2), (Integer) 3);
+  }
+
+  @Test
+  public void middleTest() {
+    LinkedList<String> testString = new LinkedList<>();
+    testString.insert("a"); //0
+    testString.insert("b"); //1
+    testString.insert("c"); //2
+    testString.insert("d"); //3
+    testString.insert("e"); //4 => middle
+    testString.insert("f"); //5
+    testString.insert("g"); //6
+    testString.insert("h"); //7
+    testString.insert("i"); //8
+    assertEquals("\nthere was an error in the middle method\n", testString.middleNode(), "e");
+  }
+
 }
