@@ -14,7 +14,7 @@ public class AppTest {
   // create new linked list
   LinkedList<Integer> testing = new LinkedList<>();
   ArrayList<Integer> testString = new ArrayList<>();
-//  LinkedList<String> nameLinkedList = new LinkedList<>();
+
 
   public Integer randomNumber(int lower, int upper) {
     return (int) (Math.random() * (upper - lower)) + lower;
@@ -131,9 +131,6 @@ public class AppTest {
 
   @Test
   public void kthTest() {
-    // System.out.print("let's test for determine the length from the tail to index 3 =>> ");
-    //    System.out.println(testing.kthFromEnd(3));
-    //    System.out.println("let's now test the middle method =>> " + testing.middleNode().value);
     this.testing.append(5);   //3
     this.testing.append(3);   //2
     this.testing.append(7);   //1
@@ -154,6 +151,46 @@ public class AppTest {
     testString.insert("h"); //7
     testString.insert("i"); //8
     assertEquals("\nthere was an error in the middle method\n", testString.middleNode(), "e");
+  }
+
+
+  @Test
+  public void zipListsTest() {
+    LinkedList<Integer> testingList = new LinkedList<>();
+    LinkedList<Integer> anotherList = new LinkedList<>();
+    LinkedList<Integer> fullList = new LinkedList<>();
+    for (int i = 0; i < 20; i++) {
+      testingList.insert(i);
+      fullList.insert(i * 5);
+      fullList.insert(i);
+      anotherList.insert(i * 5);
+
+    }
+    LinkedList<Integer> mergedList = new App<Integer>().zipLists(testingList, anotherList);
+    assertEquals("There was an error in the zipLists method", fullList.toString(), mergedList.toString());
+  }
+
+  @Test
+  public void zipListSortTest() {
+    LinkedList<Integer> testingList = new LinkedList<>();
+    LinkedList<Integer> anotherList = new LinkedList<>();
+    LinkedList<Integer> fullList = new LinkedList<>();
+    testingList.insert(10);
+    testingList.insert(13);
+    testingList.insert(17);
+    testingList.insert(18);
+    anotherList.insert(11);
+    anotherList.insert(13);
+    anotherList.insert(20);
+    fullList.insert(20);
+    fullList.insert(18);
+    fullList.insert(17);
+    fullList.insert(13);
+    fullList.insert(11);
+    fullList.insert(10);
+
+    LinkedList<Integer> sortedList = new App<>().zipListSort(testingList, anotherList);
+    assertEquals("There was an error in the zipListSort method", fullList.toString(), sortedList.toString());
   }
 
 }

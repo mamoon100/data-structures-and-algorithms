@@ -48,24 +48,37 @@ For the **toString** method will return string that contain all the value inside
 Null" Format, this method will take O(N) for time because we are looping through the whole Node and O(N) for space
 because the string depends on the Linked List length
 
+For the **zipLists** function takes two linked list as an arguments and merging them together in zip way and return the
+new Linked list the length of the new one will be the length of the first one plus the length of the second this will
+take O(N) for space where N the length of the bigger linked list and O(N) for space as we're appending inside the new
+linked list
+
+For the **zipListSort** function takes two sorted linked list as an argument and return new linked list in sorted way
+with no duplication this will take O(N) for time depending on the linked lists length and O(N) for space because again
+we are creating new linked list
+
 ## API
 
 | #  | Method | usage |
 | ----------- | ----------- | -----------|
-| 1      | `LinkedList<T> linkedListName = new LinkedList<>()`       |this method to initilize newLinkedList
-| 2 | `linkedListName.insert(value)` |this method will add new value to the first of linked list tree|
-|3| `linkedList.append(value)` | this method will append new value to the end of the linked list tree|
-|4| `linkedList.insertBefore(indexValue,value)`|this will insert a value before the indexValue on the linked list tree|
-|5| `linkedList.insertAfter(indexValue,value)`| this will insert a value after the indexValue on the linked list tree|
-|6| `linkedLits.delete(value)`|this will delete the value from the linked list tree|
-|7| `linkedList.include(value)`|this method will return `true` only if the linkedList contain the input value otherwise will return `false`|
-|8| `linkedList.kthFromEnd(indexValue)`| this method will return the node at the indexValue (head => length-1)|
-|9| `linkedList.middle()`| this method will return the middle node of the linked list tree|
-|10| `linkedList.toString()`| this method will return formatted String showing the LinkedList value|
+| 1      | `LinkedList<T> linkedListName = new LinkedList<>()`       |initialize newLinkedList
+| 2 | `linkedListName.insert(value)` |add new value to the first of linked list tree|
+|3| `linkedList.append(value)` | append new value to the end of the linked list tree|
+|4| `linkedList.insertBefore(indexValue,value)`|insert a value before the indexValue on the linked list tree|
+|5| `linkedList.insertAfter(indexValue,value)`| insert a value after the indexValue on the linked list tree|
+|6| `linkedLits.delete(value)`|delete the value from the linked list tree|
+|7| `linkedList.include(value)`|return `true` only if the linkedList contain the input value otherwise will return `false`|
+|8| `linkedList.kthFromEnd(indexValue)`| return the node value at the indexValue (head => length-1)|
+|9| `linkedList.middle()`| return the middle node value of the linked list tree|
+|10| `linkedList.toString()`| return formatted String showing the LinkedList value|
+|11| `new App()<Integer>.zipLists(list1,list2)`| return new linked list containing these the two list zipped together|
+|12| `new App()<Integer>.zipListSort(list1,list2)`| return new linked list containing these two list merged and sorted together|
 
-### Whtite Board.
+### White Board.
 
 - white board for append, insertBefore, insertAfter and delete.
   ![white board append...](./linked-list-insertions.jpg)
 - white board for kthFromEnd and middle
   ![white board kth and middle](./linked-list-kth.jpg)
+- white board for zipLists and zipListSort
+  ![White board zipLists and zipListSort](./linked-list-zip.jpg)
