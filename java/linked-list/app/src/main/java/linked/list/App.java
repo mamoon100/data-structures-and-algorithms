@@ -4,54 +4,37 @@
 package linked.list;
 
 
-import java.util.Arrays;
-
 public class App<T> {
 
   public static void main(String[] args) {
-    LinkedList<Integer> testing = new LinkedList<>();
-    System.out.println(testing.length);
-    System.out.println("The head when initialize new linked List is:  =>  " + testing.head);
-    System.out.println("Adding {1,2,3,0,5,6,9,8} to the linked list");
-    int[] inserted = {1, 2, 3, 0, 5, 6, 9, 8};
-//    adding the number to linked list
-    for (int num : inserted) testing.insert(num);
-    System.out.println("now let's print the string method");
-    System.out.println(testing.toString());
-    System.out.println("let's check if it include number 5");
-    System.out.println(testing.includes(5));
-    System.out.println("let's check if it include number 10");
-    System.out.println(testing.includes(10));
-    System.out.println("Let's append number 15 to the linked list");
-    testing.append(15);
-    System.out.println(testing.toString());
-    System.out.println("Let's add Number 7 before the 5 Value");
-    testing.insertBefore(5, 7);
-    System.out.println(testing.toString());
-    System.out.println("Now let's add Number 11 after number 2");
-    testing.insertAfter(2, 11);
-    System.out.println(testing.toString());
-    System.out.println("let's delete number 3");
-    testing.delete(3);
-    System.out.println(testing.toString());
-    System.out.print("let's test for determine the length from the tail to index 3 =>> ");
-    System.out.println(testing.kthFromEnd(3));
-    System.out.println("let's now test the middle method =>> " + testing.middleNode());
-    System.out.println("now let's create another linked list =>> ");
-    LinkedList<Integer> anotherList = new LinkedList<>();
-    //inserting sorted node into linked list
+    // seprated the printed args just for readability.
+    // this if is just for gradle run if you want to run just some test throwgh gradle run --args
+    if (args.length > 0) {
+      switch (args[0].toLowerCase()) {
+        case "linkedlist":
+          App.linkedList();
+          break;
+        case "stack":
+          App.stack();
+          break;
+        case "queue":
+          App.queue();
+          break;
+        default:
+          App.linkedList();
+          App.stack();
+          App.queue();
+          break;
+      }
+    } else {
+      // calling this will print linked list test for gradle run
+      App.linkedList();
+      // calling this will print Stack test for gradle run
+      App.stack();
+      //calling this will print the Queue test for gradle run
+      App.queue();
+    }
 
-    for (int i = 50; i < 90; i += 10) anotherList.insert(i);
-    System.out.println(testing.toString());
-    System.out.println(anotherList.toString());
-    System.out.println("Now let's merge the both linked list together =>");
-    System.out.println(new App<Integer>().zipLists(testing, anotherList).toString());
-    LinkedList<Integer> sortedList = new LinkedList<>();
-    for (int i = 0; i < 100; i += 5) sortedList.insert(i);
-    System.out.println("we created a new sorted list with this value =>> \n" + sortedList.toString());
-    System.out.println("and the we need to merge it and sorted with this => \n" + anotherList.toString());
-    System.out.println("Now after margined and sorted it =>> ");
-    System.out.println(new App<Integer>().zipListSort(anotherList, sortedList).toString());
   }
 
 
@@ -97,5 +80,94 @@ public class App<T> {
       count++;
     }
     return list;
+  }
+
+  public static void linkedList() {
+    LinkedList<Integer> testing = new LinkedList<>();
+    System.out.println(testing.length);
+    System.out.println("The head when initialize new linked List is:  =>  " + testing.head);
+    System.out.println("Adding {1,2,3,0,5,6,9,8} to the linked list");
+    int[] inserted = {1, 2, 3, 0, 5, 6, 9, 8};
+//    adding the number to linked list
+    for (int num : inserted) testing.insert(num);
+    System.out.println("now let's print the string method");
+    System.out.println(testing.toString());
+    System.out.println("let's check if it include number 5");
+    System.out.println(testing.includes(5));
+    System.out.println("let's check if it include number 10");
+    System.out.println(testing.includes(10));
+    System.out.println("Let's append number 15 to the linked list");
+    testing.append(15);
+    System.out.println(testing.toString());
+    System.out.println("Let's add Number 7 before the 5 Value");
+    testing.insertBefore(5, 7);
+    System.out.println(testing.toString());
+    System.out.println("Now let's add Number 11 after number 2");
+    testing.insertAfter(2, 11);
+    System.out.println(testing.toString());
+    System.out.println("let's delete number 3");
+    testing.delete(3);
+    System.out.println(testing.toString());
+    System.out.print("let's test for determine the length from the tail to index 3 =>> ");
+    System.out.println(testing.kthFromEnd(3));
+    System.out.println("let's now test the middle method =>> " + testing.middleNode());
+    System.out.println("now let's create another linked list =>> ");
+    LinkedList<Integer> anotherList = new LinkedList<>();
+    //inserting sorted node into linked list
+
+    for (int i = 50; i < 90; i += 10) anotherList.insert(i);
+    System.out.println(testing.toString());
+    System.out.println(anotherList.toString());
+    System.out.println("Now let's merge the both linked list together =>");
+    System.out.println(new App<Integer>().zipLists(testing, anotherList).toString());
+    LinkedList<Integer> sortedList = new LinkedList<>();
+    for (int i = 0; i < 100; i += 5) sortedList.insert(i);
+    System.out.println("we created a new sorted list with this value =>> \n" + sortedList.toString());
+    System.out.println("and the we need to merge it and sorted with this => \n" + anotherList.toString());
+    System.out.println("Now after margined and sorted it =>> ");
+    System.out.println(new App<Integer>().zipListSort(anotherList, sortedList).toString());
+  }
+
+  public static void stack() {
+    Stack<String> names = new Stack<>();
+    System.out.println("Define new Stack with String type where the top point to null => \n" + names.toString());
+    names.push("Mamoun");
+    names.push("Ali");
+    names.push("Maram");
+    System.out.println("Now let's push Three names Mamoun, Ali and Maram => \n" + names.toString());
+    System.out.println("You see that the Top point to 'Maram' which is the last name was pushed");
+    System.out.println("Now let's peek the Stack we will see the first name is Maram => " + names.peek());
+    System.out.println("Now let's pop the Stack which will remove the first stack and print it  =>  " + names.pop());
+    System.out.println("The Stack after we pop it =>  " + names.toString());
+    System.out.println("let's test if the stack is empty => " + names.isEmpty());
+    System.out.println("Now let's pop the stack two time untill it empty");
+    System.out.println("The first pop => " + names.pop());
+    System.out.println("The second pop => " + names.pop());
+    System.out.println("Now is the stack Empty =>" + names.isEmpty() + "\n");
+    System.out.println("Let's pop an empty stack => " + names.pop() + "\n");
+    System.out.println("Now let's peek an empty Stack => " + names.peek() + "\n");
+    System.out.println("You will see two exception for the empty peek and pop and that what we want \n");
+  }
+
+  public static void queue() {
+    Queue<String> waitingNames = new Queue<>();
+    System.out.println("let's create new Queue where the front and back point to null => \n" + waitingNames.toString());
+    waitingNames.enqueue("Mamoon");
+    waitingNames.enqueue("Maram");
+    waitingNames.enqueue("Assel");
+    waitingNames.enqueue("Momn");
+    System.out.println("Now let's add four names Mamoon, Maram, Assel and Momn => \n" + waitingNames.toString());
+    System.out.println("You can see the front is Mamoun which was the first name to add");
+    System.out.println("Now let's dequeu the first name in the Queue and print it => " + waitingNames.dequeue());
+    System.out.println("Now let's peek the first name in the list Queue =>" + waitingNames.peek());
+    System.out.println("Let's keep dequeue untill the queue is empty");
+    System.out.println("The first one => " + waitingNames.dequeue());
+    System.out.println("The second one => " + waitingNames.dequeue());
+    System.out.println("The third one => " + waitingNames.dequeue());
+    System.out.println("now it the Queue is empty => " + waitingNames.isEmpty() + "\n");
+    System.out.println("\nLet's dequeue an empty Queue => " + waitingNames.dequeue() + "\n");
+    System.out.println("Let's peek an empty Queue => " + waitingNames.peek());
+    System.out.println("You see that the peek and dequeue on an empty queue will give you an exciption");
+
   }
 }
