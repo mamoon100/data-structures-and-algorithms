@@ -1,6 +1,7 @@
 package linked.list;
 
 import org.junit.Test;
+import stack.Stack;
 
 import static org.junit.Assert.*;
 

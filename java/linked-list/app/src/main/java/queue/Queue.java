@@ -1,4 +1,6 @@
-package linked.list;
+package queue;
+
+import linked.list.Node;
 
 public class Queue<T> {
   Node<T> front;
