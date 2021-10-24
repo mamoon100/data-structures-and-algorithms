@@ -1,6 +1,7 @@
 package linked.list;
 
 import org.junit.Test;
+import queue.Queue;
 
 import static org.junit.Assert.*;
 
