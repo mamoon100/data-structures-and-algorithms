@@ -6,6 +6,7 @@ This java file conatains the following Classes:
 2. [Linked List](#singly-linked-list)
 3. [Stack](#stack)
 4. [Queue](#queue)
+5. [PseudoQueue](#pseudoQueue)
 
 ## Usage
 
@@ -193,3 +194,36 @@ because the string depends on the Queue length.
 |4| `queueNames.peek()`|return the first name in the Queue|
 |5| `queueNames.isEmpty()`| return boolean depeneds on the Queue if empty or not|
 |6| `queueNames.toString()`|return formated string represnt the Queue items|
+
+## PseudoQueue
+
+### Challenge
+
+Creating Queue Class that uses the Node class with Stack method and make it java-Generic. And make it follow the order
+of FIFO (**F**irst **I**n **F**irst **O**ut).
+
+### Approach & Efficiency
+
+For the **enqueue** method that taks a value as an argument and push it to the Back of the Queue this method will take
+O(
+1)for both space and time due to no looping and no extra variable.
+
+For the **dequeue** method that remove the first item in the Stack and return its value and will raise and exception if
+the stack is empty, this method will take O(1) for space and time, where there is no loop and no extra variables.
+
+For the **toString** method will return string that contain all the value inside Queue in "{value} =>{value} =>
+Null" Format, this method will take O(N) for time because we are looping through the whole Queue and O(N) for space
+because the string depends on the Queue length.
+
+### Api
+
+| #  | Method | usage |
+| ----------- | ----------- | -----------|
+| 1      | `PseudoQueue<T> queueNames = new PseudoQueue<>()`       |initialize new Pseudo Queue|
+| 2 | `queueNames.enqueue(value)` |add new value to the Last of the Pseudo Queue|
+|3| `queueNames.dequeue()` | remove the first name in the Pseudo Queue and return it|
+|6| `queueNames.toString()`|return formated string represnt the Pseudo Queue items|
+
+### white board
+
+![Pseudo Queue White Board](./pseudoqueue.jpg)

@@ -3,8 +3,8 @@ package queue;
 import linked.list.Node;
 
 public class Queue<T> {
-  Node<T> front;
-  Node<T> back;
+  private Node<T> front;
+  private Node<T> back;
   int length = 0;
 
   public Queue() {
@@ -59,5 +59,21 @@ public class Queue<T> {
     }
     msg += " Null";
     return msg;
+  }
+
+  public Node<T> getFront() {
+    return front;
+  }
+
+  public void setFront(Node<T> front) {
+    this.front = front;
+  }
+
+  public Node<T> getBack() {
+    return back;
+  }
+
+  public void setBack(Node<T> back) {
+    this.back = back;
   }
 }

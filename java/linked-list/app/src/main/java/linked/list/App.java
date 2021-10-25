@@ -3,6 +3,7 @@
  */
 package linked.list;
 
+import queue.PseudoQueue;
 import queue.Queue;
 import stack.Stack;
 
@@ -22,6 +23,9 @@ public class App<T> {
         case "queue":
           App.queue();
           break;
+        case "pseudoqueue":
+          App.pseduQueue();
+          break;
         default:
           App.linkedList();
           App.stack();
@@ -35,6 +39,10 @@ public class App<T> {
       App.stack();
       //calling this will print the Queue test for gradle run
       App.queue();
+      // calling this will print the Pseudo Queue test for gradle run
+      App.pseduQueue();
+
+
     }
 
   }
@@ -171,5 +179,18 @@ public class App<T> {
     System.out.println("Let's peek an empty Queue => " + waitingNames.peek());
     System.out.println("You see that the peek and dequeue on an empty queue will give you an exciption");
 
+  }
+
+  public static void pseduQueue() {
+    PseudoQueue<String> names = new PseudoQueue<>();
+    names.enqueue("Mamoun");
+    names.enqueue("Hussein");
+    names.enqueue("Osama");
+    System.out.println("creaing Pseudo queue with initlised value of {Mamoun,Hussein,Osama}");
+    System.out.println(names.toString());
+    System.out.println("Now let's dequeue and see what value will dequeue");
+    names.dequeue();
+    System.out.println(names.toString());
+    System.out.println("as we can see that the front value dequeu");
   }
 }

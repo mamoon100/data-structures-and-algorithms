@@ -56,4 +56,8 @@ public class Stack<T> {
     msg += " Null";
     return msg;
   }
+
+  public Node<T> getTop() {
+    return top;
+  }
 }

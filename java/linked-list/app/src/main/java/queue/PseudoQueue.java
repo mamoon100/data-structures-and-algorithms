@@ -1,31 +1,58 @@
 package queue;
 
 import linked.list.Node;
+import stack.Stack;
 
 public class PseudoQueue<T> {
 
-  private Node<T> front;
-  private Node<T> back;
-  private int length;
+  private Stack<T> primary = new Stack<>();
+  private int length = 0;
+
+  public PseudoQueue() {
+  }
 
   public void enqueue(T value) {
-    Node<T> node = new Node<>(value);
-    if (this.front == null) this.front = node;
-    else this.back.nextPointer = node;
-    this.back = node;
-    this.length++;
+    primary.push(value);
+    length++;
   }
 
   public T dequeue() {
-    Node<T> temp = this.front;
-    try {
-      if (this.front == null) throw new NullPointerException("The Queue is empty nothing to dequeue \uD83E\uDD28");
-      this.front = this.front.nextPointer;
-      this.length--;
-      return temp.value;
-    } catch (NullPointerException e) {
-      e.printStackTrace();
-      return null;
+    reverse(primary);
+    T value = primary.pop();
+    reverse(primary);
+    length--;
+    return value;
+  }
+
+  public void reverse(Stack<T> first) {
+    Node<T> current = first.getTop();
+    Stack<T> last = new Stack<>();
+    while (current != null) {
+      last.push(current.value);
+      current = current.nextPointer;
     }
+    this.primary = last;
+  }
+
+  public T getPrimary() {
+    reverse(primary);
+    T value = this.primary.getTop().value;
+    reverse(primary);
+    return value;
+  }
+
+  @Override
+  public String toString() {
+    String msg = "";
+    msg += "Front =>";
+    reverse(primary);
+    Node<T> current = primary.getTop();
+    while (current != null) {
+      msg += "{" + current.value + "} =>";
+      current = current.nextPointer;
+    }
+    reverse(primary);
+    msg += " Null";
+    return msg;
   }
 }
