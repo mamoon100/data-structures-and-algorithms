@@ -1,4 +1,4 @@
-package linked.list;
+package stack;
 
 import org.junit.Test;
 import stack.Stack;
@@ -10,7 +10,7 @@ public class StackTest {
   public void emptyStackTest() {
     // create new stack
     Stack<String> names = new Stack<>();
-    assertNull("There was a problem creating Stack", names.top);
+    assertNull("There was a problem creating Stack", names.getTop());
     // checking for an empty Stack
     assertTrue("The stack is not Empty", names.isEmpty());
   }
@@ -45,6 +45,6 @@ public class StackTest {
     names.push("Maram");
     assertEquals("There was problem poping the names into stack", names.pop(), "Maram");
     assertEquals("There was problem poping the names into stack", names.pop(), "Ali");
-    assertNull("The Stack is not empty after multiable pop", names.top);
+    assertNull("The Stack is not empty after multiable pop", names.getTop());
   }
 }

@@ -1,4 +1,4 @@
-package linked.list;
+package queue;
 
 import org.junit.Test;
 import queue.Queue;
@@ -11,8 +11,8 @@ public class QueueTest {
   public void emptyQueueTest() {
     // create new stack
     Queue<String> names = new Queue<>();
-    assertNull("There was a problem creating Front of the Queue", names.front);
-    assertNull("There was a problem in creating the back of the Queue", names.back);
+    assertNull("There was a problem creating Front of the Queue", names.getFront());
+    assertNull("There was a problem in creating the back of the Queue", names.getBack());
     // checking for an empty Stack
     assertTrue("The Queue is not Empty", names.isEmpty());
   }
@@ -36,7 +36,7 @@ public class QueueTest {
     names.enqueue("Ali");
     names.enqueue("Maram");
     assertEquals("There was problem peeking the names into stack", names.peek(), "Mamoun");
-    assertEquals("There was problem in the back of the queue", names.back.value, "Maram");
+    assertEquals("There was problem in the back of the queue", names.getBack().value, "Maram");
   }
 
   @Test
@@ -48,7 +48,7 @@ public class QueueTest {
     names.enqueue("Maram");
     assertEquals("There was problem dequeuing the names from Queue", names.dequeue(), "Ali");
     assertEquals("There was problem dequeuing the names from Queue", names.dequeue(), "Maram");
-    assertNull("The Queube Front is not empty after multiable dequeue", names.front);
+    assertNull("The Queube Front is not empty after multiable dequeue", names.getFront());
 
   }
 }
