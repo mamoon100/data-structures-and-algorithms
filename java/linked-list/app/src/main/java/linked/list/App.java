@@ -10,6 +10,9 @@ import queue.PseudoQueue;
 import queue.Queue;
 import stack.Stack;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 public class App<T> {
 
   public static void main(String[] args) {
@@ -18,36 +21,39 @@ public class App<T> {
     if (args.length > 0) {
       switch (args[0].toLowerCase()) {
         case "linkedlist":
-          App.linkedList();
+          linkedList();
           break;
         case "stack":
-          App.stack();
+          stack();
           break;
         case "queue":
-          App.queue();
+          queue();
           break;
         case "pseudoqueue":
-          App.pseduQueue();
+          pseduQueue();
+          break;
+        case "bracker":
+          bracket();
           break;
         default:
-          App.linkedList();
-          App.stack();
-          App.queue();
+          linkedList();
+          stack();
+          queue();
           break;
       }
     } else {
-      // calling this will print linked list test for gradle run
-      App.linkedList();
+      //calling this will print linked list test for gradle run
+      linkedList();
       // calling this will print Stack test for gradle run
-      App.stack();
+      stack();
       //calling this will print the Queue test for gradle run
-      App.queue();
+      queue();
       // calling this will print the Pseudo Queue test for gradle run
-      App.pseduQueue();
-      // calling this will print the Animal Shelter test for gradle run
-      App.animal();
-
-
+      pseduQueue();
+      //calling this will print the Animal Shelter test for gradle run
+      animal();
+      // calling this will print validate bracket test for gradle run
+      bracket();
     }
 
   }
@@ -95,6 +101,38 @@ public class App<T> {
       count++;
     }
     return list;
+  }
+
+  public static boolean validateBrackets(String string) {
+    Stack<Character> bracket = new Stack<>();
+//    boolean isBracketCorrectly = true;
+    for (int i = 0; i < string.length(); i++) {
+      char chr = string.charAt(i);
+      switch (chr) {
+        case '{':
+          bracket.push('}');
+          break;
+        case '[':
+          bracket.push(']');
+          break;
+        case '(':
+          bracket.push(')');
+          break;
+        case '}':
+        case ']':
+        case ')':
+          try {
+            if (bracket.getTop().value != chr || bracket.isEmpty()) {
+              return false;
+            }
+            bracket.pop();
+            break;
+          } catch (NullPointerException e) {
+            return false;
+          }
+      }
+    }
+    return bracket.isEmpty();
   }
 
   public static void linkedList() {
@@ -223,4 +261,12 @@ public class App<T> {
     System.out.println("Let's retrive the first animal on the line => " + animalShelter.dequeue("dog").toString());
     System.out.println("The animal shilter look like this now => " + animalShelter.toString());
   }
+
+  public static void bracket() {
+    System.out.println("Let's now Validate Bracket using Stack does this '()[[Extra Characters]]' will give true or false ?");
+    System.out.println("The Result => " + validateBrackets("()[[Extra Characters]]"));
+    System.out.println("Now let's try this and see what is give us '[({}]' !");
+    System.out.println("The result =>> " + validateBrackets("[({}]"));
+  }
+
 }

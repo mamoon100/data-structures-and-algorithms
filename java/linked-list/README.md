@@ -262,3 +262,25 @@ because the string depends on the Queue length.
 ### white board
 
 ![Animal Shelter White Board](./animals.jpg)
+
+## Bracket validator
+
+### Challenge
+
+Create a method that validate the bracket inside String and return true or false.
+
+### Approach & Efficiency
+
+In this solution I solved it using the Stack where i iterate over the String and pushing the forwared bracket to the
+stack while cheacking for the backword bracket this method take O(N) For time due the itteration and O(N) due the
+creation of new stack
+
+### Api
+
+| #  | Method | usage |
+| ----------- | ----------- | -----------|
+| 1      | `App.validateBrackets(string)`       |return boolean value depending if the string is bracket balanced or not|
+
+### white board
+
+![Bracket Validator White board](./bracket.jpg)
