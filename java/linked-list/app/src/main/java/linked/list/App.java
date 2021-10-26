@@ -3,6 +3,8 @@
  */
 package linked.list;
 
+import animal.AnimalShelter;
+import animal.Cat;
 import queue.PseudoQueue;
 import queue.Queue;
 import stack.Stack;
@@ -41,6 +43,8 @@ public class App<T> {
       App.queue();
       // calling this will print the Pseudo Queue test for gradle run
       App.pseduQueue();
+      //
+      App.animal();
 
 
     }
@@ -192,5 +196,22 @@ public class App<T> {
     names.dequeue();
     System.out.println(names.toString());
     System.out.println("as we can see that the front value dequeu");
+  }
+
+
+  public static void animal() {
+    Cat cat = new Cat("aa", "Ssss", 5);
+    Cat cot = new Cat("aa", "Ssss", 5);
+
+    Cat cww = new Cat("aa", "Ssss", 5);
+
+    Cat cqq = new Cat("aa", "Ssss", 5);
+
+    AnimalShelter animalShelter = new AnimalShelter();
+    animalShelter.enqueue(cat);
+    animalShelter.enqueue(cot);
+    animalShelter.enqueue(cww);
+    animalShelter.enqueue(cqq);
+    animalShelter.dequeue("cat");
   }
 }
