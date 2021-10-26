@@ -40,4 +40,14 @@ public abstract class Animal {
   public String getType() {
     return type;
   }
+
+  @Override
+  public String toString() {
+    return "Animal{" +
+      "name='" + name + '\'' +
+      ", color='" + color + '\'' +
+      ", age=" + age +
+      ", type='" + type + '\'' +
+      '}';
+  }
 }

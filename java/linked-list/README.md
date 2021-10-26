@@ -7,6 +7,7 @@ This java file conatains the following Classes:
 3. [Stack](#stack)
 4. [Queue](#queue)
 5. [PseudoQueue](#pseudoQueue)
+6. [Stack Queue Animal Shelter](#stack-queue-animal-shelter)
 
 ## Usage
 
@@ -227,3 +228,37 @@ because the string depends on the Queue length.
 ### white board
 
 ![Pseudo Queue White Board](./pseudoqueue.jpg)
+
+## Stack Queue Animal Shelter
+
+### Challenge
+
+Creating Animal class with two cats and dogs object and appending them to animalshelter with stack and queueu pressudare
+
+### Approach & Efficiency
+
+For the **enqueue** method that taks a value as an argument and push it to the Back of the Queue this method will take
+O(
+1)for both space and time due to no looping and no extra variable.
+
+For the **dequeue** method that have two options:
+
+1. passing no argument will get you the first aniaml on the list with FIFO
+2. passing String dog or cat will give the first cat or dog on the line.
+
+For the **toString** method will return string that contain all the value inside Queue in "{value} =>{value} =>
+Null" Format, this method will take O(N) for time because we are looping through the whole Queue and O(N) for space
+because the string depends on the Queue length.
+
+### Api
+
+| #  | Method | usage |
+| ----------- | ----------- | -----------|
+| 1      | `AnimalShelter<T> animalShelter = new AnimalShelter<>()`       |initialize new Aniaml Shelter|
+| 2 | `animalShelter.enqueue(animal)` |add new animal to the Last of the Animal Shelter|
+|3| `animalShelter.dequeue()` | remove the first name in the Aniaml Shelter and return it|
+|4| `animalShelter.toString()`|return formated string represnt the Animal Shelter aniamls|
+
+### white board
+
+![Animal Shelter White Board](./animals.jpg)

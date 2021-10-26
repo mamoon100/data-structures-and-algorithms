@@ -5,6 +5,7 @@ package linked.list;
 
 import animal.AnimalShelter;
 import animal.Cat;
+import animal.Dog;
 import queue.PseudoQueue;
 import queue.Queue;
 import stack.Stack;
@@ -43,7 +44,7 @@ public class App<T> {
       App.queue();
       // calling this will print the Pseudo Queue test for gradle run
       App.pseduQueue();
-      //
+      // calling this will print the Animal Shelter test for gradle run
       App.animal();
 
 
@@ -200,18 +201,26 @@ public class App<T> {
 
 
   public static void animal() {
-    Cat cat = new Cat("aa", "Ssss", 5);
-    Cat cot = new Cat("aa", "Ssss", 5);
-
-    Cat cww = new Cat("aa", "Ssss", 5);
-
-    Cat cqq = new Cat("aa", "Ssss", 5);
-
+    Cat cat = new Cat("coco", "White", 2);
+    Dog dog = new Dog("boby", "brown", 4);
+    Cat cat2 = new Cat("momo", "black", 5);
+    Dog dog2 = new Dog("dodo", "brown", 4);
+    Dog dog3 = new Dog("soso", "brown", 4);
+    Cat cat3 = new Cat("psps", "Ssss", 5);
     AnimalShelter animalShelter = new AnimalShelter();
     animalShelter.enqueue(cat);
-    animalShelter.enqueue(cot);
-    animalShelter.enqueue(cww);
-    animalShelter.enqueue(cqq);
-    animalShelter.dequeue("cat");
+    animalShelter.enqueue(dog);
+    animalShelter.enqueue(cat2);
+    animalShelter.enqueue(dog2);
+    animalShelter.enqueue(dog3);
+    animalShelter.enqueue(cat3);
+    System.out.println("Let's create animal shelter and we initilise it with");
+    System.out.println(animalShelter.toString());
+    System.out.println("let's dequeu the first animal of in the shilter  =>  " + animalShelter.dequeue().toString());
+    System.out.println("and now the animal shilter is => \n" + animalShelter.toString());
+    System.out.println("Now let's dequeu a  cat => " + animalShelter.dequeue("cat").toString());
+    System.out.println("and now the animal shilter line will look like this => \n" + animalShelter.toString());
+    System.out.println("Let's retrive the first animal on the line => " + animalShelter.dequeue("dog").toString());
+    System.out.println("The animal shilter look like this now => " + animalShelter.toString());
   }
 }

@@ -60,4 +60,8 @@ public class Stack<T> {
   public Node<T> getTop() {
     return top;
   }
+
+  public void setTop(Node<T> top) {
+    this.top = top;
+  }
 }
