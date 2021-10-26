@@ -47,4 +47,12 @@ public class AppTest {
     assertEquals("There was an error in the zipListSort method", fullList.toString(), sortedList.toString());
   }
 
+  @Test
+  public void bracketValidatorTest() {
+    String testString = "()[[Extra Characters]]";
+    assertTrue("The result should be true for " + testString, App.validateBrackets(testString));
+    String testString2 = "[({}]";
+    assertFalse("The result should be False for " + testString2, App.validateBrackets(testString2));
+  }
+
 }
