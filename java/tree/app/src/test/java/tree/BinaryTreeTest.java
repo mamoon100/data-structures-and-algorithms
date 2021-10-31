@@ -36,5 +36,6 @@ public class BinaryTreeTest {
     assertEquals("There was an error in the pre order method", binaryTree.preOrder(root), preOrder);
     assertEquals("There was an error in the in order method", binaryTree.inOrder(root), inOrder);
     assertEquals("There was an error in the post order method", binaryTree.postOrder(root), postOrder);
+    assertNull("There was an error in find max value when binary tree is empty", new BinaryTree<Integer>().findMaximumValue());
   }
 }

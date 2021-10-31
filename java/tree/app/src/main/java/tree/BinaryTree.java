@@ -1,6 +1,5 @@
 package tree;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class BinaryTree<T> {
@@ -54,8 +53,19 @@ public class BinaryTree<T> {
     return order;
   }
 
+  public Number findMaximumValue() {
+    if (this.root == null) return null;
+    double max = Double.MIN_VALUE;
+    ArrayList<Number> numbers = (ArrayList<Number>) (this.order != null ? this.order : postOrder(this.root));
+    for (Number number : numbers) {
+      if (number.doubleValue() > max) max = number.doubleValue();
+    }
+    return max;
+  }
+
   // this method and traversePreOrder I copied them from the internet.
   @Override
+
   public String toString() {
     StringBuilder sb = new StringBuilder();
     traversePreOrder(sb, "", "", this.getRoot());
