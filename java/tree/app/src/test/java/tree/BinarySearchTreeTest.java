@@ -25,5 +25,7 @@ public class BinarySearchTreeTest {
     assertFalse("There was an error in contains method", binarySearchTree.contains(22));
     ArrayList<Integer> preOrder = new ArrayList<>(Arrays.asList(15, 7, 3, 6, 10, 20, 25, 21));
     assertEquals("There was a problem in pre order with BST", binarySearchTree.preOrder(binarySearchTree.getRoot()), preOrder);
+    assertEquals("There was a problem in Find Max value", binarySearchTree.findMaximumValue().intValue(), 25);
+
   }
 }

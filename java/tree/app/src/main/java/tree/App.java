@@ -60,6 +60,7 @@ public class App {
     System.out.println("Let's see if the BST contains number 17 =>>" + binarySearchTree.contains(17));
     System.out.println("And if we try to add duplicate value it will give you an error \n");
     binarySearchTree.add(20);
+    System.out.println("Let's see the maximum number for this tree => " + binarySearchTree.findMaximumValue().intValue());
 
 
   }
