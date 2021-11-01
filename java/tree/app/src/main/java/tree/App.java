@@ -3,7 +3,11 @@
  */
 package tree;
 
-public class App {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class App<T> {
 
 
   public static void main(String[] args) {
@@ -11,6 +15,19 @@ public class App {
     binaryTree();
     // this will run Binary Search Tree test for `$gradle run`
     binarySearchTree();
+  }
+
+  public ArrayList<T> breadthFirst(BinaryTree<T> tree) {
+    Queue<Node<T>> queue = new LinkedList<>();
+    ArrayList<T> out = new ArrayList<>();
+    queue.add(tree.getRoot());
+    while (!queue.isEmpty()) {
+      Node<T> front = queue.remove();
+      out.add(front.getValue());
+      if (front.getLeftChild() != null) queue.add(front.getLeftChild());
+      if (front.getRightChild() != null) queue.add(front.getRightChild());
+    }
+    return out;
   }
 
 
@@ -41,6 +58,8 @@ public class App {
     System.out.println("Pre Order Tree List  =>>  " + binaryTree.preOrder(root));
     System.out.println("In Order Tree List =>>  " + binaryTree.inOrder(root));
     System.out.println("Post Order Tree List =>>  " + binaryTree.postOrder(root));
+//    For the breadth First Method.
+    System.out.println("Now Let's see in Breadth First Order =>> \n" + new App<String>().breadthFirst(binaryTree));
   }
 
   public static void binarySearchTree() {
@@ -61,6 +80,7 @@ public class App {
     System.out.println("And if we try to add duplicate value it will give you an error \n");
     binarySearchTree.add(20);
     System.out.println("Let's see the maximum number for this tree => " + binarySearchTree.findMaximumValue().intValue());
+    System.out.println("Now Let's see in Breadth First Order =>> \n" + new App<Integer>().breadthFirst(binarySearchTree));
 
 
   }

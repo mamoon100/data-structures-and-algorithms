@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bce922ce-c239-429c-ad15-90336f1fc5bf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/tree/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tree/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/tree/BinaryTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/test/java/tree/BinarySearchTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/tree/BinarySearchTreeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/test/java/tree/BinaryTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/test/java/tree/BinaryTreeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
