@@ -12,9 +12,22 @@ public class App<T> {
 
   public static void main(String[] args) {
     // this will run Binary Tree test for `$gradle run`
-    binaryTree();
+//    binaryTree();
     // this will run Binary Search Tree test for `$gradle run`
-    binarySearchTree();
+//    binarySearchTree();
+    KTree<Integer> kTree = new KTree<>();
+    KNode<Integer> root = new KNode<>(5);
+    kTree.setRoot(root);
+    for (int i = 12; i < 25; i++) {
+      KNode<Integer> temp = new KNode<>(i);
+      KNode<Integer> childOfTemp = new KNode<>(i * 2);
+      temp.addChild(childOfTemp);
+      childOfTemp = new KNode<>(i * 4);
+      temp.addChild(childOfTemp);
+      root.addChild(temp);
+    }
+    System.out.println(kTree.getRoot());
+    System.out.println(fizzBuzzTree(kTree).getRoot());
   }
 
   public ArrayList<T> breadthFirst(BinaryTree<T> tree) {
@@ -28,6 +41,28 @@ public class App<T> {
       if (front.getRightChild() != null) queue.add(front.getRightChild());
     }
     return out;
+  }
+
+
+  public static KTree<String> fizzBuzzTree(KTree<Integer> kTree) {
+    Queue<KNode<Integer>> queue = new LinkedList<>();
+    KTree<String> out = new KTree<>();
+    queue.add(kTree.getRoot());
+    KNode<String> kNode = new KNode<>(fizzBuzzCondition(queue.peek().getValue()));
+    out.setRoot(kNode);
+    while (!queue.isEmpty()) {
+      KNode<Integer> front = queue.remove();
+      kNode.addChild(new KNode<>(fizzBuzzCondition(front.getValue())));
+      queue.addAll(front.getChildren());
+    }
+    return out;
+  }
+
+  public static String fizzBuzzCondition(int value) {
+    if (value % 5 == 0 && value % 3 == 0) return "FizzBuzz";
+    else if (value % 5 == 0) return "Buzz";
+    else if (value % 3 == 0) return "Fizz";
+    return String.valueOf(value);
   }
 
 
