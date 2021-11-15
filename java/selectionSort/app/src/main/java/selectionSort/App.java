@@ -8,13 +8,24 @@ import java.util.Arrays;
 public class App {
   public static void main(String[] args) {
     int[] ints = {5, 7, 2, 1, 3, 4, 6};
-    System.out.println("Let's Try To Sort this Array =>>  [5,7,2,1,3,4,6]");
-    selectionSort(ints);
-    System.out.println("Sorted Array =>> " + Arrays.toString(ints));
     int[] ints2 = {20, 18, 12, 8, 5, -2};
-    System.out.println("Let's Try To Sort this Array =>>  [20,18,12,8,5,-2]");
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
+    selectionSort(ints);
+    System.out.println("Sorted Array in selection Sort method =>> " + Arrays.toString(ints));
+    //--------------------------------------------------------------------------------
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
     selectionSort(ints2);
-    System.out.println("Sorted Array =>> " + Arrays.toString(ints2));
+    System.out.println("Sorted Array in selection Sort method =>> " + Arrays.toString(ints2));
+    //--------------------------------------------------------------------------------
+    ints = new int[]{5, 7, 2, 1, 3, 4, 6};
+    ints2 = new int[]{20, 18, 12, 8, 5, -2};
+    System.out.println("==========================Merge Sort============================");
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
+    mergeSort(ints);
+    System.out.println("Sorted Array in Merge Sort method =>> " + Arrays.toString(ints));
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
+    mergeSort(ints2);
+    System.out.println("Sorted Array in Merge Sort method =>> " + Arrays.toString(ints2));
   }
 
   public static void selectionSort(int[] array) {
@@ -28,6 +39,40 @@ public class App {
       int temp = array[i];
       array[i] = array[min];
       array[min] = temp;
+    }
+  }
+
+  public static void mergeSort(int[] arr) {
+    int length = arr.length;
+    if (length > 1) {
+      int mid = length / 2;
+      int[] left = Arrays.copyOfRange(arr, 0, mid);
+      int[] right = Arrays.copyOfRange(arr, mid, length);
+      mergeSort(left);
+      mergeSort(right);
+      merge(left, right, arr);
+    }
+
+  }
+
+
+  public static void merge(int[] left, int[] right, int[] arr) {
+    int i = 0, j = 0, k = 0;
+    while (i < left.length && j < right.length) {
+      if (left[i] <= right[j]) {
+        arr[k] = left[i];
+        i++;
+      } else {
+        arr[k] = right[j];
+        j++;
+      }
+      k++;
+    }
+    while (i < left.length) {
+      arr[k++] = left[i++];
+    }
+    while (j < right.length) {
+      arr[k++] = right[j++];
     }
   }
 }
