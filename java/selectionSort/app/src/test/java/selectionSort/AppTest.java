@@ -47,4 +47,17 @@ public class AppTest {
     App.insertionSort(array2);
     assertArrayEquals(expected2, array2);
   }
+
+  @Test
+  public void quickSortTest() {
+    int[] array = {5, 4, 3, 2, 1};
+    int[] expected = {1, 2, 3, 4, 5};
+    App.quickSort(array, 0, array.length - 1);
+    assertArrayEquals(expected, array);
+    // another test
+    int[] array2 = {20, 18, 12, 8, 5, -2};
+    int[] expected2 = {-2, 5, 8, 12, 18, 20};
+    App.quickSort(array2, 0, array2.length - 1);
+    assertArrayEquals(expected2, array2);
+  }
 }
