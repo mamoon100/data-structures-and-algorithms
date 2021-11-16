@@ -1,6 +1,6 @@
-# Selection Sort
+# Sort Algorithms
 
-This is a selection sort algorithm and this file was created by [@Mamoon Hussein](https://web.facebook.com/mamoon.husen)
+This is a sort algorithm and this file was created by [@Mamoon Hussein](https://web.facebook.com/mamoon.husen)
 for Code challenge 26 for amman-java401d5.
 
 This File Contains one class which is the App Class and three methods:
@@ -11,8 +11,13 @@ This File Contains one class which is the App Class and three methods:
 
 ## Whiteboard Process
 
-![White board for Sort method](assets/selectionSort/selectionSort.jpg)
-![White board for Merge Sort method](assets/mergeSort/mergeSort.jpg)
+- Selection Sort
+
+  ![White board for Sort method](assets/selectionSort/selectionSort.jpg)
+
+- Merge Sort
+
+  ![White board for Merge Sort method](assets/mergeSort/mergeSort.jpg)
 
 ## Approach & Efficiency
 
