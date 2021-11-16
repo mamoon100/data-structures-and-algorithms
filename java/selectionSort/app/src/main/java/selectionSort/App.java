@@ -36,6 +36,16 @@ public class App {
     System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
     insertionSort(ints2);
     System.out.println("Sorted Array in Insertion Sort method =>> " + Arrays.toString(ints2));
+    System.out.println("==========================Quick Sort============================");
+    ints = randomArray();
+    ints2 = randomArray();
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
+    quickSort(ints, 0, ints.length - 1);
+    System.out.println("Sorted Array in Quick Sort method =>> " + Arrays.toString(ints));
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
+    quickSort(ints2, 0, ints2.length - 1);
+    System.out.println("Sorted Array in Quick Sort method =>> " + Arrays.toString(ints2));
+    
   }
 
   // generate random array of 10 elements with numbers between 0 and 100
@@ -106,5 +116,33 @@ public class App {
       }
       arr[j + 1] = temp;
     }
+  }
+
+  public static void quickSort(int[] arr, int left, int right) {
+    if (left < right) {
+      int position = partition(arr, left, right);
+      quickSort(arr, left, position - 1);
+      quickSort(arr, position + 1, right);
+    }
+  }
+
+  public static int partition(int[] arr, int left, int right) {
+    int pivot = arr[right];
+    int low = left - 1;
+    for (int i = left; i < right; i++) {
+      if (arr[i] <= pivot) {
+        low++;
+        swap(arr, i, low);
+      }
+    }
+    swap(arr, right, low + 1);
+    return low + 1;
+  }
+
+
+  public static void swap(int[] arr, int i, int low) {
+    int temp = arr[i];
+    arr[i] = arr[low];
+    arr[low] = temp;
   }
 }
