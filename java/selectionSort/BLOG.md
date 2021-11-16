@@ -5,6 +5,7 @@ This is a blog post for different type of sorting methods and algorithms.
 - Contents:
   - [Selection Sort](#selection-sort)
   - [Merge Sort](#merge-sort)
+  - [Insertion Sort](#insertion-sort)
 
 ## Selection Sort
 
@@ -176,3 +177,69 @@ We enter the merge function with left [4,8,23] and right [15,16,42] and arr [8,4
 we start the loop and start assigning the left side to the arr and increment i, and right side to the arr and increment
 j.
 
+## Insertion Sort
+
+The insertion sort is a simple sorting algorithm that works the way we sort playing cards in our hands.
+
+### pseudocode
+
+```
+  InsertionSort(int[] arr)
+
+    FOR i = 1 to arr.length
+
+      int j <-- i - 1
+      int temp <-- arr[i]
+
+      WHILE j >= 0 AND temp < arr[j]
+        arr[j + 1] <-- arr[j]
+        j <-- j - 1
+
+      arr[j + 1] <-- temp
+```
+
+### Visualization
+
+we will call the function with array [8,4,23,42,16,15]
+
+![step 1](assets/insertionSort/step1.jpg)
+
+In this step we will enter the for loop with i = 1, and we will assign the value of i-1=0 to j, and we will assign the
+value of arr[i] = 4 to temp then we will enter the while loop with j = 0 and temp = 4 < arr[j] = 8, and we will assign
+the value of arr[j+1] to arr[j] = 8, and we will assign the value of j-1 to j so j = -1 that we will exit the while
+loop, and we will assign the value of temp = 4 to arr[j+1] = 8, and we will increment i by 1 = 2, and we will enter the
+for loop again to step 2.
+
+![step 2](assets/insertionSort/step2.jpg)
+
+In this step we will enter the for loop with i = 2, and we will assign the value of i-1=1 to j, and we will assign the
+value of arr[i] = 23 to temp then we will not enter the while loop due that temp = 23 > arr[j] = 8, and we will assign
+the value of temp = 23 to arr[j+1] = 23, and we will increase i by 1 = 3, and we will enter the for loop again to step
+
+3.
+
+![step 3](assets/insertionSort/step3.jpg)
+
+In this step we will enter the for loop with i = 3, and we will assign the value of i-1=2 to j, and we will assign the
+value of arr[i] = 42 to temp then we will not enter the while loop due the temp = 42 > arr[j] = 23, and we will assign
+the value of temp = 42 to arr[j+1] = 42, and we will increase i by 1, and we will enter the for loop again to step 4.
+
+![step 4](assets/insertionSort/step4.jpg)
+
+In this step we will enter the for loop with i = 4, and we will assign the value of i-1=3 to j, and we will assign the
+value of arr[i] = 16 to temp then we will enter the while loop with j = 3 and temp = 16 < arr[j] = 42, and we will
+assign the value of arr[j] = 42 to arr[j+1] = 16, and we will decrease j by one => j=2, and we will continue the while
+loop with temp = 16 < arr[j] = 23, and we will assign the value of arr[j] = 23 to arr[j+1] = 42, and we will decrease j
+by one => j=1, and we will exit the while loop due that temp = 16 > arr[j] = 8, and we will assign the value of temp =
+16 to arr[j+1] = 23, and we will increase i by 1 = 5, and we will enter the for loop again to step 5.
+
+![step 5](assets/insertionSort/step5.jpg)
+
+In this step we will enter the for loop with i = 5, and we will assign the value of i-1=4 to j, and we will assign the
+value of arr[i] = 15 to temp then we will enter the while loop with j = 4 and temp = 15 < arr[j] = 42, and we will
+assign the value of arr[j] = 42 to arr[j+1] = 15, and we will decrease j by one => j=3, and we will continue the while
+loop with temp = 15 < arr[j] = 23, and we will assign the value of arr[j] = 23 to arr[j+1] = 42, and we will decrease j
+by one => j=2, and we will continue the while loop with temp = 15 < arr[j] = 16, and we will assign the value of arr[j]
+= 16 to arr[j+1] = 23, and we will decrease j by one => j=1, and we will exit the while loop due that temp = 15 >
+arr[j] = 8, and we will assign the value of temp = 15 to arr[j+1] = 16, and we will increase i by 1 = 6 and stop due we
+reach the length of the array.
