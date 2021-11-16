@@ -7,26 +7,46 @@ import java.util.Arrays;
 
 public class App {
   public static void main(String[] args) {
-    int[] ints = {5, 7, 2, 1, 3, 4, 6};
-    int[] ints2 = {20, 18, 12, 8, 5, -2};
+    int[] ints;
+    int[] ints2;
+    System.out.println("==========================Selection Sort============================");
+    ints = randomArray();
+    ints2 = randomArray();
     System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
     selectionSort(ints);
     System.out.println("Sorted Array in selection Sort method =>> " + Arrays.toString(ints));
-    //--------------------------------------------------------------------------------
     System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
     selectionSort(ints2);
     System.out.println("Sorted Array in selection Sort method =>> " + Arrays.toString(ints2));
-    //--------------------------------------------------------------------------------
-    ints = new int[]{5, 7, 2, 1, 3, 4, 6};
-    ints2 = new int[]{20, 18, 12, 8, 5, -2};
     System.out.println("==========================Merge Sort============================");
+    ints = randomArray();
+    ints2 = randomArray();
     System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
     mergeSort(ints);
     System.out.println("Sorted Array in Merge Sort method =>> " + Arrays.toString(ints));
     System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
     mergeSort(ints2);
     System.out.println("Sorted Array in Merge Sort method =>> " + Arrays.toString(ints2));
+    System.out.println("==========================Insertion Sort============================");
+    ints = randomArray();
+    ints2 = randomArray();
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints));
+    insertionSort(ints);
+    System.out.println("Sorted Array in Insertion Sort method =>> " + Arrays.toString(ints));
+    System.out.println("Let's Try To Sort this Array =>> " + Arrays.toString(ints2));
+    insertionSort(ints2);
+    System.out.println("Sorted Array in Insertion Sort method =>> " + Arrays.toString(ints2));
   }
+
+  // generate random array of 10 elements with numbers between 0 and 100
+  public static int[] randomArray() {
+    int[] array = new int[10];
+    for (int i = 0; i < array.length; i++) {
+      array[i] = (int) (Math.random() * 100);
+    }
+    return array;
+  }
+
 
   public static void selectionSort(int[] array) {
     for (int i = 0; i < array.length; i++) {
@@ -73,6 +93,18 @@ public class App {
     }
     while (j < right.length) {
       arr[k++] = right[j++];
+    }
+  }
+
+  public static void insertionSort(int[] arr) {
+    for (int i = 1; i < arr.length; i++) {
+      int j = i - 1;
+      int temp = arr[i];
+      while (j >= 0 && temp < arr[j]) {
+        arr[j + 1] = arr[j];
+        j--;
+      }
+      arr[j + 1] = temp;
     }
   }
 }
