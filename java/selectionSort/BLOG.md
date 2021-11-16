@@ -98,3 +98,81 @@ ALGORITHM Merge(left, right, arr)
 
 #### Visualization
 
+Let's Sort this array [8,4,23,42,16,15] in merge sort.
+
+![Step 1](assets/mergeSort/step1.jpg)
+
+In this step the left side is [8,4,23] and the right side is [42,16,15] while the length is 6, now due to the recursive
+call we will call the function again with param of left side [8,4,23].
+
+![Step 2](assets/mergeSort/step2.jpg)
+
+In this step we called the mergeSort function again with params of the left side as the whole array [8,4,23]
+where the new left is [8] and the right side is [4,23] while the length is 3, now due to the recursive call we will call
+the function again with param of left side [8].
+
+![Step 3](assets/mergeSort/step3.jpg)
+
+In this step we called the mergeSort function again with params of the left side as the whole array [8]  so nothing will
+happen so from now on when we have one element we will not call it in recursion.
+
+![Step 4](assets/mergeSort/step4.jpg)
+
+Now back to step 2 where we passed the left side, and now we continue with the right side [4,23] call it in recursion as
+whole array
+
+![Step 5](assets/mergeSort/step5.jpg)
+
+After we called the function with [4,23] as the whole array we can see the left is [4] and the right side is [23] we
+will not call recursion again due the one element array, and we will call the merge function with left [4] , right [23]
+and arr [4,23].
+
+![Step 6](assets/mergeSort/step6.jpg)
+
+We enter the merge function with left [4] and right [23] and arr [4,23] and we declare i,j,k and we start the loop and
+start assigning the left side to the arr and increment i, and right side to the arr and increment j.
+
+![Step 7](assets/mergeSort/step7.jpg)
+Back To step 2 where the left side and right side is sorted now we call the merge function with left is [8] and right
+[4,23] and arr [8,4,23].
+
+![Step 8](assets/mergeSort/step8.jpg)
+We enter the merge function with left [8] and right [4,23] and arr [8,4,23] and we declare i,j,k and we start the loop
+and start assigning the left side to the arr and increment i, and right side to the arr and increment j.
+
+![Step 9](assets/mergeSort/step9.jpg)
+Back to step 1 where now the left side is sorted, and we will continue with the right side [42,16,15] call it in
+recursion as whole array.
+
+![Step 10](assets/mergeSort/step10.jpg)
+After we called the function with [42,16,15] as the whole array we can see the left is [42] and the right side is
+[16,15] we will not call recursion again due the one element array, so we call the mergeSort function with [16,15] as
+whole array .
+
+![Step 11](assets/mergeSort/step11.jpg)
+After we called the function with [16,15] as the whole array we can see the left is [16] and the right side is [15]
+we will not call recursion again due the one element array, so we call the merge function where left is [16] and right
+[15] and arr [16,15].
+
+![Step 12](assets/mergeSort/step12.jpg)
+We enter the merge function with left [16] and right [15] and arr [16,15] and we declare i,j,k and we start the loop and
+start assigning the left side to the arr and increment i, and right side to the arr and increment j.
+
+![Step 13](assets/mergeSort/step13.jpg)
+Back to step 10 where now the left and right side are sorted now we call the merge function with left is [42] and right
+[15,16] and arr [42,16,15].
+
+![Step 14](assets/mergeSort/step14.jpg)
+We enter the merge function with left [42] and right [15,16] and arr [42,16,15] and we declare i,j,k and we start the
+loop and start assigning the left side to the arr and increment i, and right side to the arr and increment j.
+
+![Step 15](assets/mergeSort/step15.jpg)
+Back to step 1 where now the left and right side are sorted now we call the merge function with left is [4,8,23] and
+right
+[15,16,42] and arr [8,4,23,42,16,15] .
+
+![Step 16](assets/mergeSort/step16.jpg)
+We enter the merge function with left [4,8,23] and right [15,16,42] and arr [8,4,23,42,16,15] and we declare i,j,k and
+we start the loop and start assigning the left side to the arr and increment i, and right side to the arr and increment
+j.
+
