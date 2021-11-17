@@ -9,4 +9,4 @@
 | 3   | [Binary Search](./array-binary-search/)        |
 |4| [Linked List](./linked-list/)|
 |5| [Binary Tree](./tree)|
-|6| [Selection Sort](./selectionSort)|
+|6| [Sorting Algorithms](./sortingAlgorithms)|
