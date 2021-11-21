@@ -8,4 +8,11 @@ import static org.junit.Assert.*;
 
 public class AppTest {
 
+  @Test
+  public void repeatedWordTester() {
+    String str = "Modify your function to return a count of each of the words in the provided string";
+    assertEquals("There was an error in the method of repeated word", "of", App.repeatedWord(str));
+    String str2 = "A wiki (/ˈwɪki/ (About this soundlisten) WIK-ee) is a hypertext publication collaboratively edited and managed by its own audience directly using a web browser. A typical wiki contains multiple pages for the subjects or scope of the project and could be either open to the public or limited to use within an organization for maintaining its internal knowledge base.";
+    assertEquals("There was an error in the method of repeated word", "a", App.repeatedWord(str2));
+  }
 }

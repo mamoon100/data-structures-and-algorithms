@@ -11,7 +11,7 @@ public class HashTableTest {
   public void declaringHashTableTest() {
     HashTable<String, Integer> ht = new HashTable<String, Integer>();
     assertEquals("There was a problem in size method when the size is must be zero at the begging", 0, ht.size());
-    assertEquals("There was a problem in the capacity of hashtable", 1, ht.capacity());
+    assertEquals("There was a problem in the capacity of hashtable", 1024, ht.capacity());
     assertEquals("There was problem in toString method", "{}", ht.toString());
   }
 
@@ -46,7 +46,7 @@ public class HashTableTest {
     ht.add("c", 3);
     ht.add("d", 4);
     ht.add("e", 5);
-    assertEquals("The capacity should be 8", 8, ht.capacity());
+    assertEquals("The capacity should be 1024", 1024, ht.capacity());
   }
 
   @Test

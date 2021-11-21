@@ -10,3 +10,4 @@
 |4| [Linked List](./linked-list/)|
 |5| [Binary Tree](./tree)|
 |6| [Sorting Algorithms](./sortingAlgorithms)|
+|7| [Hash Table](./hashTabels)|

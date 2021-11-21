@@ -25,6 +25,8 @@ This challenge is to implement the hash table using the bucket class and created
   where N is the length of the key and O(1) space complexity.
 - **contains** Method that will return true if the key exists in the table and false if it doesn't. This method use O(N)
   time complexity where N is the length of the key and O(1) space complexity.
+- **repeatedWord** Method that will return the most repeated word in the text. This method use O(N) time complexity
+  where N is the length of the text and O(N) space complexity.
 
 ## API
 
@@ -34,3 +36,9 @@ This challenge is to implement the hash table using the bucket class and created
 |2| `ht.add(key, value)` | add the key and value to the table.|
 |3| `ht.get(key)` | return the value of the key if it exists in the table.|
 |4| `ht.contains(key)` | return true if the key exists in the table and false if it doesn't.|
+|5| `repeatedWord(text)` | return the most repeated word in the text.|
+
+
+## WhiteBoard
+
+![Repeated Word White Board](./repeatedWordWhiteBoard.jpg)
