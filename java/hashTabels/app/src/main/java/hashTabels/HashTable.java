@@ -9,7 +9,7 @@ public class HashTable<K, V> {
   private int capacity;
 
   public HashTable() {
-    this.capacity = 1;
+    this.capacity = 1024;
     table = new Bucket[capacity];
   }
 

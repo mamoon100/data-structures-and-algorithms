@@ -22,5 +22,26 @@ public class App {
     System.out.println("Let's see how many items are inside the table right now  =>>  " + hashTable.size());
     System.out.println("Let's check it's full capacity =>> " + hashTable.capacity());
     System.out.println("You will notice that the capacity is 2 which will the hash table start from capacity of 1 \nand will get bigger by 2 every time the size reach the capacity");
+    System.out.println("============Repeated Word Method===========");
+    System.out.println("Let's Test the string \n'It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...' \non the repeated word method and see the most repeated word among the words =>>  "+repeatedWord("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."));
+  }
+
+  public static String repeatedWord(String str) {
+    String[] words = str.toLowerCase().split(" ");
+    HashTable<String, Integer> hashTable = new HashTable<>();
+    int max = 0;
+    String repeatedWord = "";
+    for (String word : words) {
+      //clean the word from punctuation
+      word = word.replaceAll("[^a-zA-Z0-9]", "").trim();
+      if (hashTable.contains(word)) hashTable.add(word, hashTable.get(word) + 1);
+      else hashTable.add(word, 1);
+      if (hashTable.get(word) > max) {
+        max = hashTable.get(word);
+        repeatedWord = word;
+      }
+    }
+
+    return repeatedWord;
   }
 }
