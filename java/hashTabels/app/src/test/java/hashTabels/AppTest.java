@@ -4,6 +4,9 @@
 package hashTabels;
 
 import org.junit.Test;
+
+import java.util.TreeSet;
+
 import static org.junit.Assert.*;
 
 public class AppTest {
@@ -14,5 +17,20 @@ public class AppTest {
     assertEquals("There was an error in the method of repeated word", "of", App.repeatedWord(str));
     String str2 = "A wiki (/ˈwɪki/ (About this soundlisten) WIK-ee) is a hypertext publication collaboratively edited and managed by its own audience directly using a web browser. A typical wiki contains multiple pages for the subjects or scope of the project and could be either open to the public or limited to use within an organization for maintaining its internal knowledge base.";
     assertEquals("There was an error in the method of repeated word", "a", App.repeatedWord(str2));
+  }
+
+  @Test
+  public void treeIntersectionTest () {
+    TreeSet<String> treeSet1 = new TreeSet<>();
+    treeSet1.add("a");
+    treeSet1.add("b");
+    treeSet1.add("c");
+    treeSet1.add("d");
+    TreeSet<String> treeSet2 = new TreeSet<>();
+    treeSet2.add("a");
+    treeSet2.add("w");
+    treeSet2.add("r");
+    treeSet2.add("d");
+    assertEquals("There was an error in the method of tree intersection", "{d=d, a=a}", App.treeIntersection(treeSet1, treeSet2).toString());
   }
 }

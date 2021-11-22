@@ -3,7 +3,12 @@
  */
 package hashTabels;
 
+import com.sun.source.tree.Tree;
+
+import javax.swing.tree.TreeNode;
 import java.util.Arrays;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class App {
 
@@ -23,7 +28,22 @@ public class App {
     System.out.println("Let's check it's full capacity =>> " + hashTable.capacity());
     System.out.println("You will notice that the capacity is 2 which will the hash table start from capacity of 1 \nand will get bigger by 2 every time the size reach the capacity");
     System.out.println("============Repeated Word Method===========");
-    System.out.println("Let's Test the string \n'It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...' \non the repeated word method and see the most repeated word among the words =>>  "+repeatedWord("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."));
+    System.out.println("Let's Test the string \n'It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York...' \non the repeated word method and see the most repeated word among the words =>>  " + repeatedWord("It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York..."));
+    System.out.println("============Tree Intersection Method===========");
+    TreeSet<String> treeSet1 = new TreeSet<>();
+    treeSet1.add("a");
+    treeSet1.add("b");
+    treeSet1.add("c");
+    treeSet1.add("d");
+    TreeSet<String> treeSet2 = new TreeSet<>();
+    treeSet2.add("a");
+    treeSet2.add("w");
+    treeSet2.add("r");
+    treeSet2.add("d");
+    System.out.println("We created two trees set:");
+    System.out.println("The first tree =>> " + treeSet1);
+    System.out.println("The second tree =>> " + treeSet2);
+    System.out.println("Let's see the intersection of them =>> " + treeIntersection(treeSet1, treeSet2));
   }
 
   public static String repeatedWord(String str) {
@@ -41,7 +61,14 @@ public class App {
         repeatedWord = word;
       }
     }
-
     return repeatedWord;
+  }
+
+  public static HashTable<String, String> treeIntersection(TreeSet<String> tree1, TreeSet<String> tree2) {
+    HashTable<String, String> hashTable = new HashTable<>();
+    for (String word : tree1) {
+      if (tree2.contains(word)) hashTable.add(word, word);
+    }
+    return hashTable;
   }
 }
