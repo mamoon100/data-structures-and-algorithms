@@ -44,6 +44,22 @@ public class App {
     System.out.println("The first tree =>> " + treeSet1);
     System.out.println("The second tree =>> " + treeSet2);
     System.out.println("Let's see the intersection of them =>> " + treeIntersection(treeSet1, treeSet2));
+    System.out.println("============left Join Method===========");
+    HashTable<String, String> hashTable1 = new HashTable<>();
+    hashTable1.add("a", "a");
+    hashTable1.add("b", "b");
+    hashTable1.add("c", "c");
+
+    HashTable<String, String> hashTable2 = new HashTable<>();
+    hashTable2.add("a", "qq");
+    hashTable2.add("c", "ww");
+    hashTable2.add("d", "ee");
+
+    System.out.println("Let's create two Hash Tables");
+    System.out.println("The first one =>> " + hashTable1);
+    System.out.println("The second one =>> " + hashTable2);
+    System.out.println("Let's see the left join of them =>> " + Arrays.deepToString(join(hashTable1, hashTable2, true)));
+
   }
 
   public static String repeatedWord(String str) {
@@ -71,4 +87,20 @@ public class App {
     }
     return hashTable;
   }
+
+  public static String[][] join(HashTable<String, String> hashTable1, HashTable<String, String> hashTable2, boolean isLeftJoin) {
+    String[][] result = new String[hashTable1.size()][3];
+    String[] keys = hashTable1.keys();
+    for (int i = 0; i < keys.length; i++) {
+      result[i][0] = hashTable1.get(keys[i]);
+      result[i][1] = hashTable2.get(keys[i]);
+      result[i][2] = isLeftJoin ? hashTable2.get(keys[i]) : null;
+
+    }
+    return result;
+  }
+
 }
+
+
+

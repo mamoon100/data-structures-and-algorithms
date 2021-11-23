@@ -63,6 +63,15 @@ public class HashTable<K, V> {
     this.table = newTable;
   }
 
+  public K[] keys() {
+    K[] keys = (K[]) new Object[size];
+    int i = 0;
+    for (Bucket<K, V> kvBucket : table) {
+      if (kvBucket != null) keys[i++] = kvBucket.getKey();
+    }
+    return keys;
+  }
+
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
