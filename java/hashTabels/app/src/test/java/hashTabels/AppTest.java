@@ -5,6 +5,7 @@ package hashTabels;
 
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.TreeSet;
 
 import static org.junit.Assert.*;
@@ -33,4 +34,18 @@ public class AppTest {
     treeSet2.add("d");
     assertEquals("There was an error in the method of tree intersection", "{d=d, a=a}", App.treeIntersection(treeSet1, treeSet2).toString());
   }
+
+  @Test
+  public void joinTest () {
+    HashTable<String, String> hashTable1 = new HashTable<>();
+    hashTable1.add("a", "aa");
+    hashTable1.add("b", "bb");
+    hashTable1.add("c", "cc");
+    HashTable<String, String> hashTable2 = new HashTable<>();
+    hashTable2.add("a", "qq");
+    hashTable2.add("c", "ww");
+    hashTable2.add("d", "ee");
+    String[][] actual = new String[][] {{"a", "aa", "qq"}, {"c", "cc", "ww"}, {"b", "bb", null}};
+    assertArrayEquals("There was an error inside join left method",actual, App.join(hashTable1, hashTable2,true));
+     }
 }
