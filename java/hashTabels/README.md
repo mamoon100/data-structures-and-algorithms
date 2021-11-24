@@ -27,8 +27,10 @@ This challenge is to implement the hash table using the bucket class and created
   time complexity where N is the length of the key and O(1) space complexity.
 - **repeatedWord** Method that will return the most repeated word in the text. This method use O(N) time complexity
   where N is the length of the text and O(N) space complexity.
-- **treeIntersection** Method that will return the intersection of two trees. This method use O(N) time complexity
-  where N is the size of the tree and O(N) space complexity.
+- **treeIntersection** Method that will return the intersection of two trees. This method use O(N) time complexity where
+  N is the size of the tree and O(N) space complexity.
+- **join** Method that will return an array of array containing two hashtable has joined together. This method use O(N)
+  time complexity where N is the size of the hashtable and O(N) space complexity.
 
 ## API
 
@@ -40,9 +42,10 @@ This challenge is to implement the hash table using the bucket class and created
 |4| `ht.contains(key)` | return true if the key exists in the table and false if it doesn't.|
 |5| `repeatedWord(text)` | return the most repeated word in the text.|
 |6| `treeIntersection(tree1, tree2)` | return the intersection of two trees.|
-
+|7| `join(ht1, ht2, true)` | return an array of array containing two hashtable has joined together (true for left and false for right).|
 
 ## WhiteBoard
 
 ![Repeated Word White Board](./repeatedWordWhiteBoard.jpg)
 ![treeIntersection](./treeIntersection.jpg)
+![Join](./joinWhiteBoard.jpg)

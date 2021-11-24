@@ -7,6 +7,7 @@ import com.sun.source.tree.Tree;
 
 import javax.swing.tree.TreeNode;
 import java.util.Arrays;
+import java.util.List;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -46,19 +47,18 @@ public class App {
     System.out.println("Let's see the intersection of them =>> " + treeIntersection(treeSet1, treeSet2));
     System.out.println("============left Join Method===========");
     HashTable<String, String> hashTable1 = new HashTable<>();
-    hashTable1.add("a", "a");
-    hashTable1.add("b", "b");
-    hashTable1.add("c", "c");
-
+    hashTable1.add("a", "aa");
+    hashTable1.add("b", "bb");
+    hashTable1.add("c", "cc");
     HashTable<String, String> hashTable2 = new HashTable<>();
     hashTable2.add("a", "qq");
     hashTable2.add("c", "ww");
     hashTable2.add("d", "ee");
-
     System.out.println("Let's create two Hash Tables");
     System.out.println("The first one =>> " + hashTable1);
     System.out.println("The second one =>> " + hashTable2);
     System.out.println("Let's see the left join of them =>> " + Arrays.deepToString(join(hashTable1, hashTable2, true)));
+    System.out.println("Let's see the right join of them =>> " + Arrays.deepToString(join(hashTable1, hashTable2, false)));
 
   }
 
@@ -90,12 +90,23 @@ public class App {
 
   public static String[][] join(HashTable<String, String> hashTable1, HashTable<String, String> hashTable2, boolean isLeftJoin) {
     String[][] result = new String[hashTable1.size()][3];
-    String[] keys = hashTable1.keys();
-    for (int i = 0; i < keys.length; i++) {
-      result[i][0] = hashTable1.get(keys[i]);
-      result[i][1] = hashTable2.get(keys[i]);
-      result[i][2] = isLeftJoin ? hashTable2.get(keys[i]) : null;
-
+    List<String> keys;
+    if (isLeftJoin) {
+     keys = hashTable1.keys();
+    for (int i = 0; i < keys.size(); i++) {
+      String key = keys.get(i);
+      result[i][0] = key;
+      result[i][1] = hashTable1.get(key);
+      if (hashTable2.contains(key)) result[i][2] = hashTable2.get(key);
+    }
+    } else {
+      keys = hashTable2.keys();
+      for (int i = 0; i < keys.size(); i++) {
+        String key = keys.get(i);
+        result[i][0] = key;
+        result[i][1] = hashTable2.get(key);
+        if (hashTable1.contains(key)) result[i][2] = hashTable1.get(key);
+      }
     }
     return result;
   }

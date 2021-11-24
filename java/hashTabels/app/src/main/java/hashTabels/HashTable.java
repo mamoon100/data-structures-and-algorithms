@@ -1,7 +1,9 @@
 package hashTabels;
 
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class HashTable<K, V> {
   private Bucket<K, V>[] table;
@@ -63,11 +65,11 @@ public class HashTable<K, V> {
     this.table = newTable;
   }
 
-  public K[] keys() {
-    K[] keys = (K[]) new Object[size];
+  public List<K> keys() {
+    List<K> keys = new ArrayList<>();
     int i = 0;
     for (Bucket<K, V> kvBucket : table) {
-      if (kvBucket != null) keys[i++] = kvBucket.getKey();
+      if (kvBucket != null) keys.add(kvBucket.getKey());
     }
     return keys;
   }
