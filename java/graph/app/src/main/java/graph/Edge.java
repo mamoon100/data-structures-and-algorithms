@@ -29,8 +29,10 @@ public class Edge<T> {
     return weight;
   }
 
+
+
   public String toString() {
-    return start + " <-> " + end + " (" + weight + ")";
+    return start +"<-"+weight+"->"+ end ;
   }
 
   public void setStart(Vertex<T> start) {

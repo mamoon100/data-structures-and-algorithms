@@ -6,36 +6,36 @@ package graph;
 
 public class App {
   public static void main(String[] args) {
+
+    System.out.println("Let's define a new graph using some vertices");
     Graph<String> graph = new Graph<>();
     Vertex<String> a = graph.addVertex("A");
     Vertex<String> b = graph.addVertex("B");
     Vertex<String> c = graph.addVertex("C");
     Vertex<String> d = graph.addVertex("D");
     Vertex<String> e = graph.addVertex("E");
+    System.out.print("The vertices we are using ->");
+    System.out.print("  1." + a);
+    System.out.print("  2." + b);
+    System.out.print("  3." + c);
+    System.out.print("  4." + d);
+    System.out.println("  5." + e);
 
-
-
-    graph.addEdge(a, b,5);
+    System.out.println("Now let's add connect some edges");
+    graph.addEdge(a, b, 5);
+    System.out.println("We connected A and B with edge and weight 5.");
     graph.addEdge(a, c);
+    System.out.println("We connected A and C with edge.");
     graph.addEdge(b, d);
+    System.out.println("We connected B and D with edge.");
     graph.addEdge(c, d);
+    System.out.println("We connected C and D with edge.");
     graph.addEdge(d, e);
+    System.out.println("We connected D and E with edge.");
 
-//    System.out.println(a.getEdges());
-//    System.out.println(graph.getNeighbors(a));
-//    System.out.println(b.getEdges());
-//    System.out.println(graph.getNeighbors(b));
-//    System.out.println(c.getEdges());
-//    System.out.println(graph.getNeighbors(c));
-//    System.out.println(d.getEdges());
-//    System.out.println(graph.getNeighbors(d));
-//    System.out.println(e.getEdges());
-//    System.out.println(graph.getNeighbors(e));
-
-
-//    System.out.println(a.getEdges());
+    System.out.println("Now Let's print the graph in adjacency List");
     graph.print();
-//    System.out.println(graph.getNeighbors(d));
+
 
   }
 }
