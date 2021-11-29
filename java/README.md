@@ -11,3 +11,4 @@
 |5| [Binary Tree](./tree)|
 |6| [Sorting Algorithms](./sortingAlgorithms)|
 |7| [Hash Table](./hashTabels)|
+|8| [Graph](./graph)|
