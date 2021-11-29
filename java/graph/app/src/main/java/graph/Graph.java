@@ -1,9 +1,6 @@
 package graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Graph<T> {
   private final Map<Vertex<T>, List<Vertex<T>>> adjacencyList;
@@ -70,6 +67,45 @@ public class Graph<T> {
 
   public int size() {
     return size;
+  }
+
+//  ALGORITHM BreadthFirst(vertex)
+//  DECLARE nodes <-- new List()
+//  DECLARE breadth <-- new Queue()
+//  DECLARE visited <-- new Set()
+//
+//    breadth.Enqueue(vertex)
+//    visited.Add(vertex)
+//
+//    while (breadth is not empty)
+//  DECLARE front <-- breadth.Dequeue()
+//    nodes.Add(front)
+//
+//    for each child in front.Children
+//            if(child is not visited)
+//    visited.Add(child)
+//    breadth.Enqueue(child)
+//
+//    return nodes;
+
+  public List<T> breadthFirst (Vertex<T> vertex) {
+    List<T> vertices = new ArrayList<>();
+    Queue<Vertex<T>> breadth = new LinkedList<>();
+    Set<T> visited = new HashSet<>();
+    breadth.add(vertex);
+    visited.add(vertex.getValue());
+    while (!breadth.isEmpty()) {
+      Vertex<T> front = breadth.remove();
+      vertices.add(front.getValue());
+
+      for(Vertex<T> child: getNeighbors(front)){
+        if (!visited.contains(child.getValue())){
+          visited.add(child.getValue());
+          breadth.add(child);
+        }
+      }
+    }
+    return vertices;
   }
 
   public void print() {
