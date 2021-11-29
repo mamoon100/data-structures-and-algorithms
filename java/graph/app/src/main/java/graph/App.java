@@ -36,6 +36,9 @@ public class App {
     System.out.println("Now Let's print the graph in adjacency List");
     graph.print();
 
+    System.out.println("Now let's print the breadth first graph");
+    System.out.println(graph.breadthFirst(a));
+
 
   }
 }

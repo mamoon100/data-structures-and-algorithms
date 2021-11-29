@@ -23,6 +23,8 @@ java-401d5.
   optional), this method use O(1) for both time and space.
 - **print** public method that will print the adjacency list for the graph this method use O(N*M) for time, where N is
   the number of Vertices and M is the number of neighbour of that Vertices and O(1) for space.
+- **breadthFirst** method that will take a vertex as the head and return list of vertices in breadth first method, this
+  method use O(N) for iterating over the item and O(N) for space for creating set.
 
 ## API
 
@@ -34,4 +36,5 @@ java-401d5.
 |4| `graph.addVertex(vertex)`|adding vertex to the graph|
 |5| `graph.addEdge(start,end,?weight)`| adding edge between two vertices in that graph (the vertex should be already in the graph)|
 |6| `graph.print()`|Print the graph using list|
+|7| `graph.breadthFirst(vertex)`|return list containing vertices in breadth first method|
 
