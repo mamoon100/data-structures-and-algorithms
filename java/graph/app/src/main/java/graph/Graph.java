@@ -1,5 +1,7 @@
 package graph;
 
+import com.google.common.collect.Lists;
+
 import java.util.*;
 
 public class Graph<T> {
@@ -76,25 +78,6 @@ public class Graph<T> {
     return size;
   }
 
-//  ALGORITHM BreadthFirst(vertex)
-//  DECLARE nodes <-- new List()
-//  DECLARE breadth <-- new Queue()
-//  DECLARE visited <-- new Set()
-//
-//    breadth.Enqueue(vertex)
-//    visited.Add(vertex)
-//
-//    while (breadth is not empty)
-//  DECLARE front <-- breadth.Dequeue()
-//    nodes.Add(front)
-//
-//    for each child in front.Children
-//            if(child is not visited)
-//    visited.Add(child)
-//    breadth.Enqueue(child)
-//
-//    return nodes;
-
   public List<T> breadthFirst(Vertex<T> vertex) {
     List<T> vertices = new ArrayList<>();
     Queue<Vertex<T>> breadth = new LinkedList<>();
@@ -112,6 +95,31 @@ public class Graph<T> {
         }
       }
     }
+    return vertices;
+  }
+
+
+  public List<T> depthFirst(Vertex<T> vertex) {
+    List<T> vertices = new ArrayList<>();
+    Stack<Vertex<T>> breadth = new Stack<>();
+    Set<Vertex<T>> visited = new HashSet<>();
+    breadth.add(vertex);
+    while (!breadth.isEmpty()) {
+      Vertex<T> top = breadth.pop();
+
+      boolean isAllVisited = visited.containsAll(getNeighbors(top));
+      if (!isAllVisited) {
+        visited.add(top);
+        for (Vertex<T> child : getNeighbors(top)) {
+          if (!visited.contains(child))
+            breadth.add(child);
+        }
+
+      }
+      vertices.add(top.getValue());
+
+    }
+    vertices.remove(vertices.size()-1);
     return vertices;
   }
 
