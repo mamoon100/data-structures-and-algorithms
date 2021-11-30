@@ -4,6 +4,8 @@
 package graph;
 
 
+import java.util.List;
+
 public class App {
   public static void main(String[] args) {
 
@@ -39,6 +41,29 @@ public class App {
     System.out.println("Now let's print the breadth first graph");
     System.out.println(graph.breadthFirst(a));
 
+    String[] cityNames = {"A","B","D", "E"};
 
+
+
+    System.out.println("Now Let's say we have business trip for the same graph and we ant to travel from A -> B -> D -> E\nLet's see how much does it cost");
+    System.out.println(businessTrip(graph,cityNames));
+    System.out.println("Now we want to travel directly from A -> D which is not available so the cost is");
+    System.out.println(businessTrip(graph,new String[]{"A", "D"}));
+    System.out.println("You see it's null because there is no direct way from A -> D");
+
+  }
+
+
+  public static Integer businessTrip(Graph<String> graph, String[] cityNames) {
+    int sum = 0;
+    for (int i=0 ; i<cityNames.length-1; i++) {
+      Vertex<String> parent = graph.getVertex(cityNames[i]);
+      if (parent == null) return null;
+      Vertex<String> child = graph.getVertex(cityNames[i+1]);
+      List<Vertex<String>> childList = graph.getNeighbors(parent);
+      if (childList.contains(child)) sum+= child.getEdge(parent,child);
+      else return null;
+    }
+    return sum;
   }
 }
