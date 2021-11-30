@@ -16,12 +16,14 @@ public class App {
     Vertex<String> c = graph.addVertex("C");
     Vertex<String> d = graph.addVertex("D");
     Vertex<String> e = graph.addVertex("E");
+    Vertex<String> f = graph.addVertex("F");
     System.out.print("The vertices we are using ->");
     System.out.print("  1." + a);
     System.out.print("  2." + b);
     System.out.print("  3." + c);
     System.out.print("  4." + d);
-    System.out.println("  5." + e);
+    System.out.print("  5." + e);
+    System.out.println("  6."+f);
 
     System.out.println("Now let's add connect some edges");
     graph.addEdge(a, b, 5);
@@ -34,12 +36,16 @@ public class App {
     System.out.println("We connected C and D with edge.");
     graph.addEdge(d, e);
     System.out.println("We connected D and E with edge.");
+    graph.addEdge(f,e,4);
+    System.out.println("We connected E and F with edge and weight 4.");
 
     System.out.println("Now Let's print the graph in adjacency List");
     graph.print();
 
     System.out.println("Now let's print the breadth first graph");
     System.out.println(graph.breadthFirst(a));
+    System.out.println("Now let's print the depth first graph");
+    System.out.println(graph.depthFirst(a));
 
     String[] cityNames = {"A","B","D", "E"};
 

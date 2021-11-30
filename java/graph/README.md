@@ -28,6 +28,8 @@ java-401d5.
 - **businessTrip** method that will take a graph and city names as an array and return the total cost of the flight if
   possible and null if not this method use O(N) for time and O(M) for space where N is length of the array and M is the
   length of the children array
+- **depthFirst** method that will take a vertex as the head and return list of vertices in depth first method, this
+  method use O(N) for iterating over the item and O(N) for space for creating set.
 
 ## API
 
@@ -41,8 +43,10 @@ java-401d5.
 |6| `graph.print()`|Print the graph using list|
 |7| `graph.breadthFirst(vertex)`|return list containing vertices in breadth first method|
 |8| `businessTrip(graph, cityNames)`|return cost of the flight (null if there is not)|
+|9| `graph.depthFirst(vertex)`| return list containing vertices in depth first method|
 
 ## WhiteBoards
 
-![breadth white board](./breadthFirst.jpg)
-![businessTrip](./bussnisTrip.jpg)
+![breadth white board](breadthFirst.jpg)
+![businessTrip](bussnisTrip.jpg)
+![Depth First](depthFirst.jpg)
