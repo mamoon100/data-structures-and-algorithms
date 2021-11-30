@@ -33,6 +33,13 @@ public class Graph<T> {
     }
   }
 
+  public Vertex<T> getVertex(T value) {
+    for (Vertex<T> vertex : getVertices()) {
+      if (vertex.getValue() == value) return vertex;
+    }
+    return null;
+  }
+
   public List<Vertex<T>> getVertices() {
     return new ArrayList<>(adjacencyList.keySet());
   }
@@ -88,7 +95,7 @@ public class Graph<T> {
 //
 //    return nodes;
 
-  public List<T> breadthFirst (Vertex<T> vertex) {
+  public List<T> breadthFirst(Vertex<T> vertex) {
     List<T> vertices = new ArrayList<>();
     Queue<Vertex<T>> breadth = new LinkedList<>();
     Set<T> visited = new HashSet<>();
@@ -98,8 +105,8 @@ public class Graph<T> {
       Vertex<T> front = breadth.remove();
       vertices.add(front.getValue());
 
-      for(Vertex<T> child: getNeighbors(front)){
-        if (!visited.contains(child.getValue())){
+      for (Vertex<T> child : getNeighbors(front)) {
+        if (!visited.contains(child.getValue())) {
           visited.add(child.getValue());
           breadth.add(child);
         }
@@ -112,13 +119,11 @@ public class Graph<T> {
     for (Vertex<T> vertex : getVertices()) {
       System.out.print(vertex.getValue() + ": ");
       for (Vertex<T> neighbor : getNeighbors(vertex)) {
-        System.out.print(neighbor.getValue()+","+neighbor.getEdge(vertex,neighbor) + " ");
+        System.out.print(neighbor.getValue() + "," + neighbor.getEdge(vertex, neighbor) + " ");
       }
       System.out.println();
     }
   }
-
-
 
 
 }
